@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "move_left": ["A", "Left"],
+    "move_right": ["D", "Right"],
+    "jump": ["Space"],
+    "interact": ["E"],
+    "resonance": ["F"],
+    "stealth": ["Shift", "C"],
+    "world_map": ["M", "Tab"],
+    "pause": ["Escape"]
+  },
+  "gamepad": {
+    "move": "LeftStick",
+    "jump": "South",
+    "interact": "West",
+    "resonance": "East",
+    "world_map": "Select"
+  }
+}

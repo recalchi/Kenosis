@@ -1,0 +1,145 @@
+{
+  "package_name": "botoes_kenosis_medidas_jogo",
+  "files": [
+    {
+      "file": "botao_lateral_esquerdo_normal_396x156.png",
+      "category": "lateral_esquerdo",
+      "state": "normal",
+      "size": {
+        "width": 396,
+        "height": 156
+      },
+      "text_safe_area_2x": {
+        "width": 260,
+        "height": 64
+      }
+    },
+    {
+      "file": "botao_lateral_esquerdo_hover_396x156.png",
+      "category": "lateral_esquerdo",
+      "state": "hover",
+      "size": {
+        "width": 396,
+        "height": 156
+      },
+      "text_safe_area_2x": {
+        "width": 260,
+        "height": 64
+      }
+    },
+    {
+      "file": "botao_lateral_esquerdo_pressionado_396x156.png",
+      "category": "lateral_esquerdo",
+      "state": "pressionado",
+      "size": {
+        "width": 396,
+        "height": 156
+      },
+      "text_safe_area_2x": {
+        "width": 260,
+        "height": 64
+      }
+    },
+    {
+      "file": "botao_lateral_esquerdo_desabilitado_396x156.png",
+      "category": "lateral_esquerdo",
+      "state": "desabilitado",
+      "size": {
+        "width": 396,
+        "height": 156
+      },
+      "text_safe_area_2x": {
+        "width": 260,
+        "height": 64
+      }
+    },
+    {
+      "file": "botao_principal_painel_direito_normal_540x172.png",
+      "category": "painel_direito_principal",
+      "state": "normal",
+      "size": {
+        "width": 540,
+        "height": 172
+      },
+      "text_safe_area_2x": {
+        "width": 380,
+        "height": 62
+      }
+    },
+    {
+      "file": "botao_principal_painel_direito_hover_540x172.png",
+      "category": "painel_direito_principal",
+      "state": "hover",
+      "size": {
+        "width": 540,
+        "height": 172
+      },
+      "text_safe_area_2x": {
+        "width": 380,
+        "height": 62
+      }
+    },
+    {
+      "file": "botao_principal_painel_direito_pressionado_540x172.png",
+      "category": "painel_direito_principal",
+      "state": "pressionado",
+      "size": {
+        "width": 540,
+        "height": 172
+      },
+      "text_safe_area_2x": {
+        "width": 380,
+        "height": 62
+      }
+    },
+    {
+      "file": "botao_principal_painel_direito_desabilitado_540x172.png",
+      "category": "painel_direito_principal",
+      "state": "desabilitado",
+      "size": {
+        "width": 540,
+        "height": 172
+      },
+      "text_safe_area_2x": {
+        "width": 380,
+        "height": 62
+      }
+    },
+    {
+      "file": "botao_pequeno_aplicar_cancelar_normal_336x136.png",
+      "category": "pequeno_aplicar_cancelar",
+      "state": "normal",
+      "size": {
+        "width": 336,
+        "height": 136
+      }
+    },
+    {
+      "file": "botao_pequeno_aplicar_cancelar_hover_336x136.png",
+      "category": "pequeno_aplicar_cancelar",
+      "state": "hover",
+      "size": {
+        "width": 336,
+        "height": 136
+      }
+    },
+    {
+      "file": "botao_pequeno_aplicar_cancelar_pressionado_336x136.png",
+      "category": "pequeno_aplicar_cancelar",
+      "state": "pressionado",
+      "size": {
+        "width": 336,
+        "height": 136
+      }
+    },
+    {
+      "file": "botao_pequeno_aplicar_cancelar_desabilitado_336x136.png",
+      "category": "pequeno_aplicar_cancelar",
+      "state": "desabilitado",
+      "size": {
+        "width": 336,
+        "height": 136
+      }
+    }
+  ]
+}

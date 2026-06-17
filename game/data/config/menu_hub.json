@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "title": "KENOSIS",
+  "subtitle": "A memoria insiste onde o vazio tenta apagar.",
+  "season_label": "PROTOTIPO JOGAVEL",
+  "opening_text": "Escolha seu ponto de entrada. A Ressonancia muda o cenario, mas a memoria decide o caminho.",
+  "footer": "Sprint 0.1 | PC-first | Godot 4.6",
+  "primary_menu": [
+    {
+      "id": "play",
+      "label": "Jogar",
+      "caption": "Continuar, mapa e jornada narrativa",
+      "submenu": "play"
+    },
+    {
+      "id": "archive",
+      "label": "Arquivo",
+      "caption": "Inventario, memorias e progresso",
+      "submenu": "archive"
+    },
+    {
+      "id": "tutorial",
+      "label": "Tutorial",
+      "caption": "Objetivo, controles e regras",
+      "action": "tutorial"
+    },
+    {
+      "id": "settings",
+      "label": "Opcoes",
+      "caption": "Audio, video, controles e gameplay",
+      "action": "settings"
+    },
+    {
+      "id": "quit",
+      "label": "Sair",
+      "caption": "Encerrar o jogo",
+      "action": "quit"
+    }
+  ],
+  "submenus": {
+    "play": {
+      "title": "Entrada",
+      "description": "Escolha a experiencia que deseja testar agora.",
+      "items": [
+        {
+          "node_name": "ContinueButton",
+          "label": "Continuar",
+          "caption": "Campo de testes principal",
+          "action": "start_game",
+          "primary": true
+        },
+        {
+          "node_name": "MapTestButton",
+          "label": "Mapa e Ameacas",
+          "caption": "GPS, teletransporte e inimigos expandidos",
+          "action": "show_map_select"
+        },
+        {
+          "node_name": "StoryButton",
+          "label": "Jornada Narrativa",
+          "caption": "Percorrer os locais da historia",
+          "action": "start_story"
+        }
+      ]
+    },
+    "archive": {
+      "title": "Arquivo Vivo",
+      "description": "Espaco reservado para progresso, memorias e inventario. Mantido visivel para validar a hierarquia final do menu.",
+      "items": [
+        {
+          "node_name": "InventoryButton",
+          "label": "Inventario",
+          "caption": "Itens e artefatos coletados",
+          "disabled": true
+        },
+        {
+          "node_name": "MemoriesButton",
+          "label": "Memorias",
+          "caption": "Fragmentos preservados",
+          "disabled": true
+        },
+        {
+          "node_name": "ResonanceButton",
+          "label": "Ressonancia",
+          "caption": "Afinidades e upgrades futuros",
+          "disabled": true
+        }
+      ]
+    }
+  },
+  "settings_tabs": [
+    {
+      "id": "general",
+      "label": "Geral",
+      "rows": ["text_speed", "tutorials_enabled"]
+    },
+    {
+      "id": "audio",
+      "label": "Audio",
+      "rows": ["master_volume", "music_volume", "sfx_volume"]
+    },
+    {
+      "id": "video",
+      "label": "Video",
+      "rows": ["fullscreen", "vsync_enabled"]
+    },
+    {
+      "id": "controls",
+      "label": "Controles",
+      "rows": ["move", "jump", "interact", "resonance", "stealth", "world_map"]
+    }
+  ]
+}

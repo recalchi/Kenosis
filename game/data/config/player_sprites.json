@@ -1,0 +1,188 @@
+﻿[
+    {
+        "name":  "idle",
+        "frame_count":  7,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_idle_0.png",
+                      "res://assets/sprites/player/frames/player_idle_1.png",
+                      "res://assets/sprites/player/frames/player_idle_2.png",
+                      "res://assets/sprites/player/frames/player_idle_3.png",
+                      "res://assets/sprites/player/frames/player_idle_4.png",
+                      "res://assets/sprites/player/frames/player_idle_5.png",
+                      "res://assets/sprites/player/frames/player_idle_6.png"
+                  ]
+    },
+    {
+        "name":  "walk",
+        "frame_count":  8,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_walk_0.png",
+                      "res://assets/sprites/player/frames/player_walk_1.png",
+                      "res://assets/sprites/player/frames/player_walk_2.png",
+                      "res://assets/sprites/player/frames/player_walk_3.png",
+                      "res://assets/sprites/player/frames/player_walk_4.png",
+                      "res://assets/sprites/player/frames/player_walk_5.png",
+                      "res://assets/sprites/player/frames/player_walk_6.png",
+                      "res://assets/sprites/player/frames/player_walk_7.png"
+                  ]
+    },
+    {
+        "name":  "run",
+        "frame_count":  8,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_run_0.png",
+                      "res://assets/sprites/player/frames/player_run_1.png",
+                      "res://assets/sprites/player/frames/player_run_2.png",
+                      "res://assets/sprites/player/frames/player_run_3.png",
+                      "res://assets/sprites/player/frames/player_run_4.png",
+                      "res://assets/sprites/player/frames/player_run_5.png",
+                      "res://assets/sprites/player/frames/player_run_6.png",
+                      "res://assets/sprites/player/frames/player_run_7.png"
+                  ]
+    },
+    {
+        "name":  "turn",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_turn_0.png",
+                      "res://assets/sprites/player/frames/player_turn_1.png",
+                      "res://assets/sprites/player/frames/player_turn_2.png",
+                      "res://assets/sprites/player/frames/player_turn_3.png"
+                  ]
+    },
+    {
+        "name":  "jump_start",
+        "frame_count":  3,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_jump_start_0.png",
+                      "res://assets/sprites/player/frames/player_jump_start_1.png",
+                      "res://assets/sprites/player/frames/player_jump_start_2.png"
+                  ]
+    },
+    {
+        "name":  "jump_rise",
+        "frame_count":  3,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_jump_rise_0.png",
+                      "res://assets/sprites/player/frames/player_jump_rise_1.png",
+                      "res://assets/sprites/player/frames/player_jump_rise_2.png"
+                  ]
+    },
+    {
+        "name":  "apex",
+        "frame_count":  2,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_apex_0.png",
+                      "res://assets/sprites/player/frames/player_apex_1.png"
+                  ]
+    },
+    {
+        "name":  "fall",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_fall_0.png",
+                      "res://assets/sprites/player/frames/player_fall_1.png",
+                      "res://assets/sprites/player/frames/player_fall_2.png",
+                      "res://assets/sprites/player/frames/player_fall_3.png"
+                  ]
+    },
+    {
+        "name":  "land",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_land_0.png",
+                      "res://assets/sprites/player/frames/player_land_1.png",
+                      "res://assets/sprites/player/frames/player_land_2.png",
+                      "res://assets/sprites/player/frames/player_land_3.png"
+                  ]
+    },
+    {
+        "name":  "crouch",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_crouch_0.png",
+                      "res://assets/sprites/player/frames/player_crouch_1.png",
+                      "res://assets/sprites/player/frames/player_crouch_2.png",
+                      "res://assets/sprites/player/frames/player_crouch_3.png"
+                  ]
+    },
+    {
+        "name":  "crouch_stealth",
+        "frame_count":  5,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_crouch_stealth_0.png",
+                      "res://assets/sprites/player/frames/player_crouch_stealth_1.png",
+                      "res://assets/sprites/player/frames/player_crouch_stealth_2.png",
+                      "res://assets/sprites/player/frames/player_crouch_stealth_3.png",
+                      "res://assets/sprites/player/frames/player_crouch_stealth_4.png"
+                  ]
+    },
+    {
+        "name":  "interact",
+        "frame_count":  3,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_interact_0.png",
+                      "res://assets/sprites/player/frames/player_interact_1.png",
+                      "res://assets/sprites/player/frames/player_interact_2.png"
+                  ]
+    },
+    {
+        "name":  "resonance",
+        "frame_count":  7,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_resonance_0.png",
+                      "res://assets/sprites/player/frames/player_resonance_1.png",
+                      "res://assets/sprites/player/frames/player_resonance_2.png",
+                      "res://assets/sprites/player/frames/player_resonance_3.png",
+                      "res://assets/sprites/player/frames/player_resonance_4.png",
+                      "res://assets/sprites/player/frames/player_resonance_5.png",
+                      "res://assets/sprites/player/frames/player_resonance_6.png"
+                  ]
+    },
+    {
+        "name":  "damage_hit",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_damage_hit_0.png",
+                      "res://assets/sprites/player/frames/player_damage_hit_1.png",
+                      "res://assets/sprites/player/frames/player_damage_hit_2.png",
+                      "res://assets/sprites/player/frames/player_damage_hit_3.png"
+                  ]
+    },
+    {
+        "name":  "death",
+        "frame_count":  6,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_death_0.png",
+                      "res://assets/sprites/player/frames/player_death_1.png",
+                      "res://assets/sprites/player/frames/player_death_2.png",
+                      "res://assets/sprites/player/frames/player_death_3.png",
+                      "res://assets/sprites/player/frames/player_death_4.png",
+                      "res://assets/sprites/player/frames/player_death_5.png"
+                  ]
+    },
+    {
+        "name":  "respawn",
+        "frame_count":  8,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_respawn_0.png",
+                      "res://assets/sprites/player/frames/player_respawn_1.png",
+                      "res://assets/sprites/player/frames/player_respawn_2.png",
+                      "res://assets/sprites/player/frames/player_respawn_3.png",
+                      "res://assets/sprites/player/frames/player_respawn_4.png",
+                      "res://assets/sprites/player/frames/player_respawn_5.png",
+                      "res://assets/sprites/player/frames/player_respawn_6.png",
+                      "res://assets/sprites/player/frames/player_respawn_7.png"
+                  ]
+    },
+    {
+        "name":  "silhouette_shadow",
+        "frame_count":  4,
+        "paths":  [
+                      "res://assets/sprites/player/frames/player_silhouette_shadow_0.png",
+                      "res://assets/sprites/player/frames/player_silhouette_shadow_1.png",
+                      "res://assets/sprites/player/frames/player_silhouette_shadow_2.png",
+                      "res://assets/sprites/player/frames/player_silhouette_shadow_3.png"
+                  ]
+    }
+]

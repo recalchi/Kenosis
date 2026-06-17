@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+game/.godot/
+/android/
+game/android/
+
+# Local generated artifacts
+builds/*
+!builds/.gitkeep

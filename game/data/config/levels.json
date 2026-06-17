@@ -1,0 +1,212 @@
+{
+  "enemy_catalog": [
+    "corrupted_patroller",
+    "ancestral_abomination",
+    "unstable_energy",
+    "mystic_sentinel",
+    "fallen_shadow"
+  ],
+  "map_destinations": [
+    {"id": "awakening", "index": 1, "name": "Clareira do Despertar", "region": "awakening"},
+    {"id": "echo_trail", "index": 2, "name": "Trilha dos Ecos", "region": "awakening"},
+    {"id": "forgotten_sanctuary", "index": 3, "name": "Santuario Esquecido", "region": "fall"},
+    {"id": "broken_gate", "index": 4, "name": "Portao Partido", "region": "fall"},
+    {"id": "dormant_factory", "index": 5, "name": "Fabrica Adormecida", "region": "fall"},
+    {"id": "scar_city", "index": 6, "name": "Cidade das Cicatrizes", "region": "fall"},
+    {"id": "mechanical_core", "index": 7, "name": "Nucleo Mecanico", "region": "forge"},
+    {"id": "forge", "index": 8, "name": "Forja da Corrupcao", "region": "forge"},
+    {"id": "flame_labyrinth", "index": 9, "name": "Labirinto das Chamas", "region": "forge"},
+    {"id": "whisper_library", "index": 10, "name": "Biblioteca dos Sussurros", "region": "abyss"},
+    {"id": "rupture_chamber", "index": 11, "name": "Camara da Ruptura", "region": "abyss"},
+    {"id": "eternal_bridge", "index": 12, "name": "Ponte dos Eternos", "region": "abyss"},
+    {"id": "formless_echo", "index": 13, "name": "Eco sem Forma", "region": "void"},
+    {"id": "void_heart", "index": 14, "name": "Coracao do Vazio", "region": "void"},
+    {"id": "remaining_silence", "index": 15, "name": "Silencio que Resta", "region": "void"},
+    {"id": "rebirth", "index": 16, "name": "Epilogo / Renascimento", "region": "awakening"}
+  ],
+  "story_locations": {
+    "awakening": {
+      "name": "Clareira do Despertar",
+      "region": "awakening",
+      "scene": "res://scenes/levels/locations/Awakening.tscn",
+      "lore": "awakening_echo",
+      "dialogue": "awakening_intro",
+      "enemy": "mystic_sentinel",
+      "next": "echo_trail",
+      "previous": "",
+      "tint": "7ec8b5"
+    },
+    "echo_trail": {
+      "name": "Trilha dos Ecos",
+      "region": "awakening",
+      "scene": "res://scenes/levels/locations/EchoTrail.tscn",
+      "lore": "echo_trail_memory",
+      "dialogue": "echo_trail_intro",
+      "enemy": "mystic_sentinel",
+      "next": "forgotten_sanctuary",
+      "previous": "awakening",
+      "tint": "72af91"
+    },
+    "forgotten_sanctuary": {
+      "name": "Santuario Esquecido",
+      "region": "fall",
+      "scene": "res://scenes/levels/locations/ForgottenSanctuary.tscn",
+      "lore": "forgotten_sanctuary_memory",
+      "dialogue": "forgotten_sanctuary_intro",
+      "enemy": "ancestral_abomination",
+      "next": "broken_gate",
+      "previous": "echo_trail",
+      "tint": "87918a"
+    },
+    "broken_gate": {
+      "name": "Portao Partido",
+      "region": "fall",
+      "scene": "res://scenes/levels/locations/BrokenGate.tscn",
+      "lore": "broken_gate_memory",
+      "dialogue": "broken_gate_intro",
+      "enemy": "ancestral_abomination",
+      "next": "dormant_factory",
+      "previous": "forgotten_sanctuary",
+      "tint": "7b7770"
+    },
+    "dormant_factory": {
+      "name": "Fabrica Adormecida",
+      "region": "fall",
+      "scene": "res://scenes/levels/locations/DormantFactory.tscn",
+      "lore": "dormant_factory_memory",
+      "dialogue": "dormant_factory_intro",
+      "enemy": "ancestral_abomination",
+      "next": "scar_city",
+      "previous": "broken_gate",
+      "tint": "696f73"
+    },
+    "scar_city": {
+      "name": "Cidade das Cicatrizes",
+      "region": "fall",
+      "scene": "res://scenes/levels/locations/ScarCity.tscn",
+      "lore": "fallen_city",
+      "dialogue": "scar_city_intro",
+      "enemy": "ancestral_abomination",
+      "next": "mechanical_core",
+      "previous": "dormant_factory",
+      "tint": "74706b"
+    },
+    "mechanical_core": {
+      "name": "Nucleo Mecanico",
+      "region": "forge",
+      "scene": "res://scenes/levels/locations/MechanicalCore.tscn",
+      "lore": "mechanical_core_memory",
+      "dialogue": "mechanical_core_intro",
+      "enemy": "unstable_energy",
+      "next": "forge",
+      "previous": "scar_city",
+      "tint": "965847"
+    },
+    "forge": {
+      "name": "Forja da Corrupcao",
+      "region": "forge",
+      "scene": "res://scenes/levels/locations/Forge.tscn",
+      "lore": "corruption_forge",
+      "dialogue": "forge_intro",
+      "enemy": "unstable_energy",
+      "next": "flame_labyrinth",
+      "previous": "mechanical_core",
+      "tint": "a44a38"
+    },
+    "flame_labyrinth": {
+      "name": "Labirinto das Chamas",
+      "region": "forge",
+      "scene": "res://scenes/levels/locations/FlameLabyrinth.tscn",
+      "lore": "flame_labyrinth_memory",
+      "dialogue": "flame_labyrinth_intro",
+      "enemy": "unstable_energy",
+      "next": "whisper_library",
+      "previous": "forge",
+      "tint": "b55b36"
+    },
+    "whisper_library": {
+      "name": "Biblioteca dos Sussurros",
+      "region": "abyss",
+      "scene": "res://scenes/levels/locations/WhisperLibrary.tscn",
+      "lore": "whisper_library_memory",
+      "dialogue": "whisper_library_intro",
+      "enemy": "mystic_sentinel",
+      "next": "rupture_chamber",
+      "previous": "flame_labyrinth",
+      "tint": "4e7894"
+    },
+    "rupture_chamber": {
+      "name": "Camara da Ruptura",
+      "region": "abyss",
+      "scene": "res://scenes/levels/locations/RuptureChamber.tscn",
+      "lore": "rupture_chamber_memory",
+      "dialogue": "rupture_chamber_intro",
+      "enemy": "fallen_shadow",
+      "next": "eternal_bridge",
+      "previous": "whisper_library",
+      "tint": "526d8f"
+    },
+    "eternal_bridge": {
+      "name": "Ponte dos Eternos",
+      "region": "abyss",
+      "scene": "res://scenes/levels/locations/EternalBridge.tscn",
+      "lore": "eternal_bridge_memory",
+      "dialogue": "eternal_bridge_intro",
+      "enemy": "fallen_shadow",
+      "next": "formless_echo",
+      "previous": "rupture_chamber",
+      "tint": "45647e"
+    },
+    "formless_echo": {
+      "name": "Eco sem Forma",
+      "region": "void",
+      "scene": "res://scenes/levels/locations/FormlessEcho.tscn",
+      "lore": "formless_echo_memory",
+      "dialogue": "formless_echo_intro",
+      "enemy": "fallen_shadow",
+      "next": "void_heart",
+      "previous": "eternal_bridge",
+      "tint": "644c86"
+    },
+    "void_heart": {
+      "name": "Coracao do Vazio",
+      "region": "void",
+      "scene": "res://scenes/levels/locations/VoidHeart.tscn",
+      "lore": "void_heart",
+      "dialogue": "void_heart_intro",
+      "enemy": "fallen_shadow",
+      "next": "remaining_silence",
+      "previous": "formless_echo",
+      "tint": "573f78"
+    },
+    "remaining_silence": {
+      "name": "Silencio que Resta",
+      "region": "void",
+      "scene": "res://scenes/levels/locations/RemainingSilence.tscn",
+      "lore": "remaining_silence_memory",
+      "dialogue": "remaining_silence_intro",
+      "enemy": "fallen_shadow",
+      "next": "rebirth",
+      "previous": "void_heart",
+      "tint": "4c3a65"
+    },
+    "rebirth": {
+      "name": "Epilogo / Renascimento",
+      "region": "awakening",
+      "scene": "res://scenes/levels/locations/Rebirth.tscn",
+      "lore": "rebirth_memory",
+      "dialogue": "rebirth_intro",
+      "enemy": "",
+      "next": "",
+      "previous": "remaining_silence",
+      "tint": "a8d4ad"
+    }
+  },
+  "test_areas": {
+    "awakening": {"spawn": [180, 408], "enemy": "mystic_sentinel"},
+    "fall": {"spawn": [720, 408], "enemy": "ancestral_abomination"},
+    "forge": {"spawn": [1320, 408], "enemy": "unstable_energy"},
+    "abyss": {"spawn": [1900, 408], "enemy": "fallen_shadow"},
+    "void": {"spawn": [2460, 408], "enemy": "corrupted_patroller"}
+  }
+}

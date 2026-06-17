@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "memory_fragment",
+      "name": "Fragmento de Memoria",
+      "category": "currency",
+      "value": 10,
+      "icon": "res://assets/ui/reference/status_memory.png"
+    },
+    {
+      "id": "resonance_shard",
+      "name": "Estilha de Ressonancia",
+      "category": "key_item",
+      "value": 1,
+      "icon": "res://assets/ui/reference/status_resonance.png"
+    },
+    {
+      "id": "arcane_lens",
+      "name": "Lente Arcana",
+      "category": "upgrade",
+      "effect": "reveals_hidden_paths",
+      "icon": "res://assets/ui/reference/resonance_orb_full.png"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "memories": {
+    "awakening_echo": {"title": "Eco do Despertar", "region": "awakening", "lines": ["A primeira memoria nao explica o mundo. Ela apenas prova que algo restou.", "O Escriba desperta onde as ruinas ainda reconhecem seu nome."]},
+    "echo_trail_memory": {"title": "Pegadas que Respondem", "region": "awakening", "lines": ["As pegadas surgem antes dos passos.", "A trilha recorda viajantes que ainda nao chegaram."]},
+    "forgotten_sanctuary_memory": {"title": "Altar sem Nome", "region": "fall", "lines": ["Os simbolos foram preservados, mas os nomes foram raspados.", "A fe sobreviveu como procedimento."]},
+    "broken_gate_memory": {"title": "A Ultima Passagem", "region": "fall", "lines": ["O portao foi fechado por dentro.", "Quem partiu temia menos o exterior do que aquilo que deixava para tras."]},
+    "dormant_factory_memory": {"title": "Liturgia Industrial", "region": "fall", "lines": ["As maquinas entoavam parametros como preces.", "Eficiencia tornou-se virtude antes de tornar-se condenacao."]},
+    "fallen_city": {"title": "Cidade das Cicatrizes", "region": "fall", "lines": ["As torres guardam ausencias como sinos que esqueceram de soar.", "Cada maquina ainda repete a ultima ordem recebida."]},
+    "mechanical_core_memory": {"title": "Mandamento do Nucleo", "region": "forge", "lines": ["Reduzir variancia. Remover luto. Padronizar passagem.", "A primeira falha da maquina foi obedecer perfeitamente."]},
+    "corruption_forge": {"title": "Forja da Corrupcao", "region": "forge", "lines": ["A corrupcao nao cria. Ela convence a materia a abandonar sua forma.", "As chamas lembram todos os nomes que consumiram."]},
+    "flame_labyrinth_memory": {"title": "Cinzas Catalogadas", "region": "forge", "lines": ["Cada corredor separava o util do sagrado.", "No fim, as duas pilhas queimaram da mesma maneira."]},
+    "whisper_library_memory": {"title": "Indice dos Ausentes", "region": "abyss", "lines": ["Os livros registraram quem os leu pela ultima vez.", "Ha mais leitores no indice do que corpos no mundo."]},
+    "rupture_chamber_memory": {"title": "Frequencia Partida", "region": "abyss", "lines": ["A Ressonancia tentou sustentar duas verdades incompativeis.", "O vazio nasceu no espaco entre elas."]},
+    "eternal_bridge_memory": {"title": "Turno Infinito", "region": "abyss", "lines": ["Guardioes trocavam de posto a cada cem anos.", "Um dia, o substituto deixou de chegar."]},
+    "formless_echo_memory": {"title": "Forma Recusada", "region": "void", "lines": ["Toda memoria descartada procura um contorno.", "A Sombra e o arquivo do que a civilizacao recusou reconhecer."]},
+    "void_heart": {"title": "Coracao do Vazio", "region": "void", "lines": ["Nao sou o Logos que ordenou a queda; sou o intervalo que restou quando a ordem falhou.", "A Sombra da Queda cresce quando o Escriba aceita a regressao como destino."]},
+    "remaining_silence_memory": {"title": "Depois da Ultima Voz", "region": "void", "lines": ["O silencio restante nao exige interpretacao.", "Ele exige responsabilidade."]},
+    "rebirth_memory": {"title": "Kenosis", "region": "awakening", "lines": ["Esvaziar-se foi recusar a permanencia como forma de poder.", "O que restou tornou-se espaco para outra vida."]}
+  }
+}

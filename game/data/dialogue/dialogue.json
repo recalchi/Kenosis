@@ -1,0 +1,23 @@
+{
+  "dialogues": {
+    "map_welcome": {"speaker": "Sistema Cartografico", "lines": ["Mapa central sincronizado.", "Selecione um marco conhecido para realizar um salto de Ressonancia."]},
+    "awakening_intro": {"speaker": "Escriba do Fluxo", "lines": ["Minha memoria desperta antes do meu corpo.", "Se o mundo ainda guarda cicatrizes, eu ainda tenho uma funcao."]},
+    "echo_trail_intro": {"speaker": "Eco sem Nome", "lines": ["Nao siga as vozes. Siga o intervalo entre elas.", "O caminho verdadeiro e aquele que a ruina tenta esquecer."]},
+    "forgotten_sanctuary_intro": {"speaker": "Escriba do Fluxo", "lines": ["Este santuario foi esvaziado com cuidado.", "Alguem preservou os simbolos e removeu todos os nomes."]},
+    "broken_gate_intro": {"speaker": "Registro do Portao", "lines": ["Entrada negada aos que ainda possuem forma.", "A passagem reconhece apenas aquilo que ja perdeu alguma coisa."]},
+    "dormant_factory_intro": {"speaker": "Voz da Fabrica", "lines": ["Producao suspensa. Oracao suspensa. Luto suspenso.", "A ultima ordem permanece: otimizar o sagrado."]},
+    "scar_city_intro": {"speaker": "Coro das Torres", "lines": ["Cada janela foi uma testemunha.", "Cada torre aprendeu a permanecer de pe sem seus habitantes."]},
+    "mechanical_core_intro": {"speaker": "Nucleo Mecanico", "lines": ["Fluxo detectado. Pureza abaixo do parametro historico.", "Recomenda-se remover memoria para aumentar eficiencia."]},
+    "forge_intro": {"speaker": "Escriba do Fluxo", "lines": ["Aqui transformaram passagem em ferramenta.", "A corrupcao foi primeiro uma escolha administrativa."]},
+    "flame_labyrinth_intro": {"speaker": "Chamas de Arquivo", "lines": ["Nome consumido: sacerdote. Nome consumido: filho.", "Nome preservado: nenhum."]},
+    "whisper_library_intro": {"speaker": "Bibliotecaria Ausente", "lines": ["Os livros aprenderam a sussurrar quando seus leitores desapareceram.", "Leia devagar. Algumas frases ainda procuram um corpo."]},
+    "rupture_chamber_intro": {"speaker": "Camara da Ruptura", "lines": ["Duas frequencias entraram. Apenas o silencio saiu.", "A ruptura continua acontecendo, embora o instante tenha terminado."]},
+    "eternal_bridge_intro": {"speaker": "Guardiao da Ponte", "lines": ["A eternidade era apenas o nome dado ao turno seguinte.", "Nenhum guardiao deveria ter permanecido tanto tempo."]},
+    "formless_echo_intro": {"speaker": "Sombra da Queda", "lines": ["Voce me chama de sombra porque teme reconhecer sua forma.", "Eu sou tudo o que sua memoria decidiu nao carregar."]},
+    "void_heart_intro": {"speaker": "Coracao Silencioso", "lines": ["Nao vim pedir que me salve.", "Vim lembrar que preservar tambem exige deixar partir."]},
+    "remaining_silence_intro": {"speaker": "Escriba do Fluxo", "lines": ["Nao ha resposta depois deste ponto.", "Ha apenas a responsabilidade de escolher o que sera lembrado."]},
+    "rebirth_intro": {"speaker": "Escriba do Fluxo", "lines": ["Esvaziar-se nao foi desaparecer.", "Foi abrir espaco para que o mundo pudesse recomecar sem repetir nosso nome."]},
+    "sentinel_warning": {"speaker": "Sentinela Mistica", "lines": ["Assinatura nao catalogada.", "Iniciando observacao arcana."]},
+    "shadow_pressure": {"speaker": "Sombra da Queda", "lines": ["Voce ja falhou antes.", "Eu sou o caminho que essa memoria tentou esconder."]}
+  }
+}

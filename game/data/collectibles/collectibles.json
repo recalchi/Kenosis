@@ -1,0 +1,20 @@
+{
+  "collectibles": [
+    {"id": "memory_awake_01", "type": "memory_fragment", "level": "awakening", "reward": 10, "lore": "awakening_echo"},
+    {"id": "memory_echo_01", "type": "memory_fragment", "level": "echo_trail", "reward": 10, "lore": "echo_trail_memory"},
+    {"id": "memory_sanctuary_01", "type": "memory_fragment", "level": "forgotten_sanctuary", "reward": 10, "lore": "forgotten_sanctuary_memory"},
+    {"id": "memory_gate_01", "type": "memory_fragment", "level": "broken_gate", "reward": 10, "lore": "broken_gate_memory"},
+    {"id": "memory_factory_01", "type": "memory_fragment", "level": "dormant_factory", "reward": 12, "lore": "dormant_factory_memory"},
+    {"id": "memory_fall_01", "type": "memory_fragment", "level": "scar_city", "reward": 12, "lore": "fallen_city"},
+    {"id": "memory_core_01", "type": "resonance_shard", "level": "mechanical_core", "reward": 15, "lore": "mechanical_core_memory"},
+    {"id": "memory_forge_01", "type": "memory_fragment", "level": "forge", "reward": 15, "lore": "corruption_forge"},
+    {"id": "memory_flame_01", "type": "memory_fragment", "level": "flame_labyrinth", "reward": 15, "lore": "flame_labyrinth_memory"},
+    {"id": "memory_library_01", "type": "memory_fragment", "level": "whisper_library", "reward": 16, "lore": "whisper_library_memory"},
+    {"id": "memory_rupture_01", "type": "resonance_shard", "level": "rupture_chamber", "reward": 16, "lore": "rupture_chamber_memory"},
+    {"id": "memory_bridge_01", "type": "memory_fragment", "level": "eternal_bridge", "reward": 16, "lore": "eternal_bridge_memory"},
+    {"id": "memory_formless_01", "type": "memory_fragment", "level": "formless_echo", "reward": 18, "lore": "formless_echo_memory"},
+    {"id": "memory_void_01", "type": "memory_fragment", "level": "void_heart", "reward": 20, "lore": "void_heart"},
+    {"id": "memory_silence_01", "type": "memory_fragment", "level": "remaining_silence", "reward": 20, "lore": "remaining_silence_memory"},
+    {"id": "memory_rebirth_01", "type": "memory_fragment", "level": "rebirth", "reward": 25, "lore": "rebirth_memory"}
+  ]
+}

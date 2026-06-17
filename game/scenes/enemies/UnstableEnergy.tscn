@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/expansion_enemy.gd" id="1"]
+
+[sub_resource type="CircleShape2D" id="Body"]
+radius = 27.0
+
+[sub_resource type="CircleShape2D" id="Contact"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="Interaction"]
+radius = 105.0
+
+[node name="UnstableEnergy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1")
+enemy_id = &"unstable_energy"
+display_name = "Energia Instavel"
+frame_root = "res://assets/sprites/enemies/unstable_energy"
+floating = true
+patrol_distance = 110.0
+detection_distance = 330.0
+attack_distance = 150.0
+patrol_speed = 36.0
+chase_speed = 72.0
+max_health = 2
+contact_damage = 1
+point_reward = 20
+attack_cooldown_seconds = 1.8
+attack_vfx_path = "res://assets/vfx/corruption/unstable_explosion.png"
+resonance_vfx_path = "res://assets/vfx/arcane/unstable_ring.png"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Body")
+
+[node name="EnemyAnimator" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.68, 0.68)
+z_index = 6
+
+[node name="ContactArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
+shape = SubResource("Contact")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("Interaction")

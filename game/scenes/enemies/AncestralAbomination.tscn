@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/expansion_enemy.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="Body"]
+size = Vector2(54, 76)
+
+[sub_resource type="RectangleShape2D" id="Contact"]
+size = Vector2(70, 82)
+
+[sub_resource type="RectangleShape2D" id="Interaction"]
+size = Vector2(190, 120)
+
+[node name="AncestralAbomination" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1")
+enemy_id = &"ancestral_abomination"
+display_name = "Abominacao Ancestral"
+frame_root = "res://assets/sprites/enemies/ancestral_abomination"
+patrol_distance = 145.0
+detection_distance = 390.0
+attack_distance = 86.0
+patrol_speed = 45.0
+chase_speed = 105.0
+max_health = 3
+contact_damage = 2
+point_reward = 30
+attack_vfx_path = "res://assets/vfx/combat/abomination_claw.png"
+resonance_vfx_path = "res://assets/vfx/corruption/abomination_burst.png"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("Body")
+
+[node name="EnemyAnimator" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -51)
+scale = Vector2(0.64, 0.64)
+z_index = 6
+
+[node name="ContactArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
+position = Vector2(0, -12)
+shape = SubResource("Contact")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -20)
+shape = SubResource("Interaction")

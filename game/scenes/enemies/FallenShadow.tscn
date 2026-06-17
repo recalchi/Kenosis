@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/expansion_enemy.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="Body"]
+size = Vector2(42, 70)
+
+[sub_resource type="RectangleShape2D" id="Contact"]
+size = Vector2(60, 78)
+
+[sub_resource type="CircleShape2D" id="Interaction"]
+radius = 112.0
+
+[node name="FallenShadow" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1")
+enemy_id = &"fallen_shadow"
+display_name = "Sombra da Queda"
+frame_root = "res://assets/sprites/enemies/fallen_shadow"
+floating = true
+patrol_distance = 125.0
+detection_distance = 370.0
+attack_distance = 88.0
+patrol_speed = 38.0
+chase_speed = 92.0
+max_health = 3
+contact_damage = 1
+point_reward = 30
+attack_cooldown_seconds = 1.35
+attack_vfx_path = "res://assets/vfx/shadow/fallen_pressure.png"
+resonance_vfx_path = "res://assets/vfx/shadow/fallen_slash.png"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Body")
+
+[node name="EnemyAnimator" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(0.68, 0.68)
+z_index = 6
+
+[node name="ContactArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
+shape = SubResource("Contact")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("Interaction")
