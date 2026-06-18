@@ -85,10 +85,29 @@ O hub ainda usa visual placeholder e deve receber assets/estilo final depois.
 ### Mapa e GPS
 
 - `M` ou `Tab` abre o mapa central.
+- O acesso depende da Lente Cartografica persistente.
+- A lente pode ser obtida na sala de mapa e no primeiro local da historia.
 - O mapa apresenta 16 destinos narrativos e cinco ancoras ativas na sala de
   expansao.
-- O GPS permanece no canto superior direito, informa a ancora mais proxima e
-  a distancia aproximada.
+- Os simbolos originais de checkpoint, chefe, portal e area secreta sao os
+  unicos pontos visiveis no atlas.
+- Destinos e ancoras sao selecionaveis por hotspots invisiveis alinhados aos
+  simbolos e rotulos ja desenhados; nao adicionar badges, letras ou circulos.
+- Destinos ainda nao descobertos usam o proprio simbolo do atlas em escala de
+  cinza e informam nome/status no painel lateral.
+- A posicao atual do Escriba usa um unico marcador cartografico dourado.
+- Clicar num ponto apenas seleciona e informa a fase; teleporte exige o botao
+  lateral correspondente.
+- Roda do mouse e botoes laterais controlam zoom; arrastar move o atlas.
+- A abertura reproduz o pergaminho em oito frames, do rolo fechado ao mapa
+  aberto. Atlas, controles e painel lateral permanecem ocultos ate o crossfade
+  final.
+- Fases ja visitadas exibem `Viajar para esta fase`; a fase atual e locais ainda
+  bloqueados nunca habilitam essa acao.
+- Missao, etapa, localizacao, distancia e memorias compartilham um unico painel
+  no canto superior direito.
 - Teletransporte move o Player para uma ancora segura e atualiza o ponto de
   retorno.
+- No modo historia, o mapa informa a localizacao atual sem teleportar o Player
+  para coordenadas da sala de expansao.
 - `Esc` fecha primeiro o mapa antes de abrir a pausa da sala.

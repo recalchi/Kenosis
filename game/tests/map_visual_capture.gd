@@ -7,6 +7,14 @@ const OUTPUT_DIR := "res://tests/artifacts"
 func _init() -> void:
 	root.size = Vector2i(1280, 720)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUTPUT_DIR))
+	var save_system := root.get_node_or_null("SaveSystem")
+	if save_system != null:
+		save_system.begin_test_session()
+		var test_data: Dictionary = save_system.get_data()
+		test_data["current_location"] = "awakening"
+		test_data["unlocked_locations"] = ["awakening"]
+		save_system.set("_data", test_data)
+		save_system.set_map_access(true)
 
 	var packed: PackedScene = load(ROOM_PATH)
 	var room := packed.instantiate()
@@ -25,6 +33,8 @@ func _init() -> void:
 		await process_frame
 	await _capture("%s/map_room_overlay.png" % OUTPUT_DIR)
 	navigator.set_map_visible(false)
+	if save_system != null:
+		save_system.end_test_session()
 	quit(0)
 
 

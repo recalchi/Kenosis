@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://scripts/enemies/expansion_enemy.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/enemies/mystic_sentinel.gd" id="1"]
 
 [sub_resource type="RectangleShape2D" id="Body"]
 size = Vector2(38, 64)
@@ -35,8 +35,8 @@ resonance_vfx_path = "res://assets/vfx/arcane/sentinel_flash.png"
 shape = SubResource("Body")
 
 [node name="EnemyAnimator" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
-scale = Vector2(0.68, 0.68)
+position = Vector2(0, -22)
+scale = Vector2(0.22, 0.22)
 z_index = 6
 
 [node name="ContactArea" type="Area2D" parent="."]

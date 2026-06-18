@@ -1,6 +1,8 @@
 extends Node
 
 const SAVE_PATH := "user://kenosis_save.cfg"
+const MAP_ACCESS_ITEM_ID := "cartographer_lens"
+const LEGACY_MAP_ACCESS_ITEM_ID := "arcane_lens"
 
 var _data := {
 	"version": 2,
@@ -79,6 +81,24 @@ func collect_item(item_id: StringName) -> bool:
 	_data.collected_items = collected
 	save()
 	return true
+
+
+func has_map_access() -> bool:
+	var collected: Array = _data.collected_items
+	return collected.has(MAP_ACCESS_ITEM_ID) or collected.has(LEGACY_MAP_ACCESS_ITEM_ID)
+
+
+func set_map_access(enabled: bool) -> void:
+	var collected: Array = _data.collected_items
+	if enabled:
+		if not collected.has(MAP_ACCESS_ITEM_ID):
+			collected.append(MAP_ACCESS_ITEM_ID)
+	else:
+		for id in [MAP_ACCESS_ITEM_ID, LEGACY_MAP_ACCESS_ITEM_ID]:
+			if collected.has(id):
+				collected.erase(id)
+	_data.collected_items = collected
+	save()
 
 
 func get_data() -> Dictionary:

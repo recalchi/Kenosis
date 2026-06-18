@@ -1,0 +1,122 @@
+{
+  "enemy_id": "corrupted_patroller",
+  "display_name": "Patrulheiro Corrompido",
+  "root": "guard_test_field_memory_gate",
+  "states": [
+    {
+      "id": "spawning",
+      "animation": "respawn_reformacao",
+      "purpose": "Reforma o corpo corrompido antes de voltar ao patrulhamento.",
+      "transitions": [
+        {
+          "to": "patrol",
+          "when": "respawn_reformacao_finished"
+        }
+      ]
+    },
+    {
+      "id": "patrol",
+      "animation": "walk_furtivo",
+      "purpose": "Percorre a faixa de patrulha entre os limites esquerdo e direito.",
+      "transitions": [
+        {
+          "to": "chase",
+          "when": "player_visible_inside_vision"
+        },
+        {
+          "to": "stunned",
+          "when": "rear_resonance_or_hidden_resonance"
+        }
+      ]
+    },
+    {
+      "id": "alert",
+      "animation": "stop_idle_alerta",
+      "purpose": "Para, observa e tenta reacquirir o jogador depois de perder a assinatura.",
+      "transitions": [
+        {
+          "to": "chase",
+          "when": "player_visible_inside_vision"
+        },
+        {
+          "to": "stunned",
+          "when": "rear_resonance_or_hidden_resonance"
+        }
+      ]
+    },
+    {
+      "id": "chase",
+      "animation": "walk_furtivo",
+      "purpose": "Persegue o jogador visível, acelerando em relação à patrulha.",
+      "transitions": [
+        {
+          "to": "alert",
+          "when": "player_signature_hidden"
+        },
+        {
+          "to": "attack",
+          "when": "player_enters_contact_area"
+        },
+        {
+          "to": "stunned",
+          "when": "rear_resonance_or_hidden_resonance"
+        }
+      ]
+    },
+    {
+      "id": "attack",
+      "animation": "attack_golpe_rapido",
+      "purpose": "Aplica dano de contato e aguarda o fim da animação antes de voltar a caçar ou alertar.",
+      "transitions": [
+        {
+          "to": "chase",
+          "when": "attack_finished_and_player_visible"
+        },
+        {
+          "to": "alert",
+          "when": "attack_finished_and_player_hidden_or_missing"
+        }
+      ]
+    },
+    {
+      "id": "stunned",
+      "animation": "backstab > take_damage > death",
+      "purpose": "Executa a sequência de purificação por trás e libera a conclusão do desafio.",
+      "transitions": [
+        {
+          "to": "spawning",
+          "when": "stun_timer_finished"
+        }
+      ]
+    },
+    {
+      "id": "defeated",
+      "animation": "death",
+      "purpose": "Estado reservado para derrota definitiva em variantes futuras."
+    }
+  ],
+  "animation_inventory": {
+    "active": [
+      "idle",
+      "walk",
+      "walk_furtivo",
+      "alert",
+      "stop_idle_alerta",
+      "attack",
+      "attack_golpe_rapido",
+      "backstab",
+      "damage",
+      "take_damage",
+      "turn",
+      "death",
+      "respawn",
+      "respawn_reformacao"
+    ],
+    "pending_hooks": {
+      "crouch": "Alias compatível para stealth baixo.",
+      "crouch_stealth": "Reservado para patrulha baixa ou variante em cobertura.",
+      "crouch_walk": "Reservado para deslocamento furtivo baixo.",
+      "attack_ataque_critico": "Reservado para ataque elite ou variante de baixa vida."
+    }
+  }
+}

@@ -22,6 +22,8 @@ Cada inimigo de expansao possui `idle`, `move`, `alert`, `attack`, `damage`,
 
 - Dia e base anterior: `assets/sprites/backgrounds/day/`.
 - Expansao: `assets/sprites/backgrounds/expansion/`.
+- Locais de historia: `assets/sprites/backgrounds/locations/<location_id>/`.
+  - Clareira do Despertar: `assets/sprites/backgrounds/locations/awakening/`.
 - Mapa central: `assets/maps/central_map.png`.
 
 Ordem visual preferencial:

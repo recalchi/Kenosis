@@ -22,6 +22,7 @@ func _ready() -> void:
 	_create_map_destinations()
 	_create_expansion_enemies()
 	_create_map_navigator()
+	_create_map_access_challenge()
 	hud.show_message("Sala de expansao: M ou TAB abre o mapa e as ancoras de teletransporte.")
 
 
@@ -146,6 +147,13 @@ func _create_map_navigator() -> void:
 		)
 	navigator.destination_selected.connect(_on_destination_selected)
 	add_child(navigator)
+
+
+func _create_map_access_challenge() -> void:
+	var pickup: Area2D = _create_map_access_pickup("MapAccessPickup", Vector2(365, 350))
+	var navigator := get_node_or_null("MapNavigator") as MapNavigator
+	if navigator != null:
+		pickup.connect("collected", Callable(navigator, "refresh_map_access"))
 
 
 func _on_expansion_enemy_defeated(_enemy_id: StringName, reward: int) -> void:

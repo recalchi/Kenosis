@@ -43,6 +43,9 @@ func _init() -> void:
 	await _test_save_progression()
 	if _failed:
 		return
+	await _test_map_story_travel()
+	if _failed:
+		return
 	if _save_system != null:
 		_save_system.end_test_session()
 	print("KENOSIS_STORY_REGIONS_OK")
@@ -165,13 +168,29 @@ func _test_dialogue_box() -> void:
 	root.add_child(room)
 	await process_frame
 	await process_frame
+	var intro_timer := room.find_child("IntroDialogueTimer", true, false) as Timer
+	if intro_timer != null:
+		intro_timer.stop()
 
 	var hud := room.find_child("PrototypeHUD", true, false)
 	var overlay := room.find_child("DialogueOverlay", true, false)
+	var visual_root := room.find_child("DialogueVisualRoot", true, false) as Control
+	var frame := room.find_child("DialogueFrame", true, false) as NinePatchRect
 	var speaker := room.find_child("DialogueSpeaker", true, false) as Label
+	var body := room.find_child("DialogueBody", true, false) as Label
 	var counter := room.find_child("DialogueCounter", true, false) as Label
-	if hud == null or overlay == null or speaker == null or counter == null:
+	var marker := room.find_child("DialogueNextMarker", true, false) as TextureRect
+	if hud == null or overlay == null or visual_root == null or frame == null or speaker == null or body == null or counter == null or marker == null:
 		_fail("dialogue box structure is incomplete")
+		return
+	if frame.texture == null or String(frame.get_meta("asset_path", "")).is_empty() or not String(frame.get_meta("asset_path", "")).ends_with("caixa_dialogo_grande_com_slot_retrato_e_tag_vazios_416x123_2x_832x246.png"):
+		_fail("dialogue box is not using the validated large 2x asset")
+		return
+	if frame.texture.get_width() != 832 or frame.texture.get_height() != 246:
+		_fail("dialogue box asset has unexpected dimensions")
+		return
+	if frame.get_patch_margin(SIDE_LEFT) != 44 or frame.get_patch_margin(SIDE_TOP) != 36 or frame.get_patch_margin(SIDE_RIGHT) != 44 or frame.get_patch_margin(SIDE_BOTTOM) != 36:
+		_fail("dialogue box 9-slice margins are not aligned to the manifest")
 		return
 	if not hud.has_method("show_dialogue_id"):
 		_fail("HUD cannot load dialogue by data id")
@@ -179,8 +198,11 @@ func _test_dialogue_box() -> void:
 
 	hud.call("show_dialogue_id", &"awakening_intro")
 	await process_frame
-	if not overlay.visible or speaker.text.is_empty() or counter.text != "1 / 2":
+	if not overlay.visible or speaker.text.is_empty() or body.text.is_empty() or counter.text != "1 / 2":
 		_fail("data-driven dialogue did not open correctly")
+		return
+	if visual_root.modulate.a <= 0.0 or visual_root.modulate.a > 1.0:
+		_fail("dialogue opening transition did not initialize")
 		return
 	hud.call("complete_dialogue_line")
 	hud.call("advance_dialogue")
@@ -189,8 +211,10 @@ func _test_dialogue_box() -> void:
 		return
 	hud.call("complete_dialogue_line")
 	hud.call("advance_dialogue")
+	for _frame in range(20):
+		await process_frame
 	if overlay.visible:
-		_fail("dialogue did not close")
+		_fail("dialogue did not close after its exit transition")
 		return
 
 	var story_exit := room.find_child("StoryExit", true, false)
@@ -261,6 +285,44 @@ func _test_save_progression() -> void:
 	if not bool(save_system.call("is_location_unlocked", &"echo_trail")):
 		_fail("location unlock was not persisted in memory")
 		return
+
+
+func _test_map_story_travel() -> void:
+	var save_system := root.get_node_or_null("SaveSystem")
+	if save_system == null:
+		_fail("SaveSystem unavailable for map travel")
+		return
+	save_system.set_map_access(true)
+	save_system.set_current_location(&"awakening")
+	save_system.unlock_location(&"echo_trail")
+
+	var scene: PackedScene = load("res://scenes/levels/locations/Awakening.tscn")
+	var room := scene.instantiate()
+	root.add_child(room)
+	current_scene = room
+	await process_frame
+	await process_frame
+
+	var navigator := room.find_child("MapNavigator", true, false)
+	if navigator == null or not navigator.has_method("travel_to_story_location"):
+		_fail("story map travel API is unavailable")
+		return
+	if not bool(navigator.call("travel_to_story_location", "echo_trail")):
+		_fail("story map travel request was rejected")
+		return
+	for _frame in range(45):
+		await process_frame
+	if current_scene == null or String(current_scene.get("location_id")) != "echo_trail":
+		_fail("story map travel did not load the requested scene")
+		return
+	if paused:
+		_fail("story map travel left the tree paused")
+		return
+	var traveled_room := current_scene
+	root.remove_child(traveled_room)
+	traveled_room.queue_free()
+	current_scene = null
+	await process_frame
 
 
 func _fail(reason: String) -> void:

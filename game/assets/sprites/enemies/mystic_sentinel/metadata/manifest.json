@@ -1,0 +1,1176 @@
+{
+  "enemy": "SentinelaMistica",
+  "animations": [
+    {
+      "animation": "idle",
+      "frame_count": 5,
+      "max_canvas": [
+        337,
+        475
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            337,
+            470
+          ],
+          "equal_canvas_size": [
+            337,
+            475
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_cropped/idle_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_equal_canvas/idle_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            327,
+            470
+          ],
+          "equal_canvas_size": [
+            337,
+            475
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_cropped/idle_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_equal_canvas/idle_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            337,
+            469
+          ],
+          "equal_canvas_size": [
+            337,
+            475
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_cropped/idle_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_equal_canvas/idle_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            331,
+            475
+          ],
+          "equal_canvas_size": [
+            337,
+            475
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_cropped/idle_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_equal_canvas/idle_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            325,
+            463
+          ],
+          "equal_canvas_size": [
+            337,
+            475
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_cropped/idle_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle/frames_equal_canvas/idle_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "patrulha_flutuacao",
+      "frame_count": 5,
+      "max_canvas": [
+        82,
+        95
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            80,
+            95
+          ],
+          "equal_canvas_size": [
+            82,
+            95
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_cropped/patrulha_flutuacao_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_equal_canvas/patrulha_flutuacao_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            82,
+            95
+          ],
+          "equal_canvas_size": [
+            82,
+            95
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_cropped/patrulha_flutuacao_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_equal_canvas/patrulha_flutuacao_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            81,
+            95
+          ],
+          "equal_canvas_size": [
+            82,
+            95
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_cropped/patrulha_flutuacao_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_equal_canvas/patrulha_flutuacao_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            82,
+            95
+          ],
+          "equal_canvas_size": [
+            82,
+            95
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_cropped/patrulha_flutuacao_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_equal_canvas/patrulha_flutuacao_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            80,
+            95
+          ],
+          "equal_canvas_size": [
+            82,
+            95
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_cropped/patrulha_flutuacao_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/patrulha_flutuacao/frames_equal_canvas/patrulha_flutuacao_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "scan_observacao",
+      "frame_count": 4,
+      "max_canvas": [
+        390,
+        267
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            191,
+            267
+          ],
+          "equal_canvas_size": [
+            390,
+            267
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_cropped/scan_observacao_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_equal_canvas/scan_observacao_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            335,
+            267
+          ],
+          "equal_canvas_size": [
+            390,
+            267
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_cropped/scan_observacao_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_equal_canvas/scan_observacao_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            390,
+            267
+          ],
+          "equal_canvas_size": [
+            390,
+            267
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_cropped/scan_observacao_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_equal_canvas/scan_observacao_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            283,
+            244
+          ],
+          "equal_canvas_size": [
+            390,
+            267
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_cropped/scan_observacao_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/scan_observacao/frames_equal_canvas/scan_observacao_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "pulso_deteccao",
+      "frame_count": 6,
+      "max_canvas": [
+        261,
+        273
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            178,
+            245
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            231,
+            245
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            254,
+            245
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            261,
+            246
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            260,
+            249
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_05.png"
+        },
+        {
+          "frame": 6,
+          "cropped_size": [
+            229,
+            273
+          ],
+          "equal_canvas_size": [
+            261,
+            273
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_cropped/pulso_deteccao_06.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/pulso_deteccao/frames_equal_canvas/pulso_deteccao_06.png"
+        }
+      ]
+    },
+    {
+      "animation": "idle_alerta",
+      "frame_count": 4,
+      "max_canvas": [
+        269,
+        375
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            269,
+            373
+          ],
+          "equal_canvas_size": [
+            269,
+            375
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_cropped/idle_alerta_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_equal_canvas/idle_alerta_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            264,
+            373
+          ],
+          "equal_canvas_size": [
+            269,
+            375
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_cropped/idle_alerta_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_equal_canvas/idle_alerta_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            262,
+            375
+          ],
+          "equal_canvas_size": [
+            269,
+            375
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_cropped/idle_alerta_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_equal_canvas/idle_alerta_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            261,
+            373
+          ],
+          "equal_canvas_size": [
+            269,
+            375
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_cropped/idle_alerta_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/idle_alerta/frames_equal_canvas/idle_alerta_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "turn",
+      "frame_count": 4,
+      "max_canvas": [
+        244,
+        378
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            244,
+            378
+          ],
+          "equal_canvas_size": [
+            244,
+            378
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_cropped/turn_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_equal_canvas/turn_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            236,
+            376
+          ],
+          "equal_canvas_size": [
+            244,
+            378
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_cropped/turn_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_equal_canvas/turn_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            221,
+            372
+          ],
+          "equal_canvas_size": [
+            244,
+            378
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_cropped/turn_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_equal_canvas/turn_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            213,
+            369
+          ],
+          "equal_canvas_size": [
+            244,
+            378
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_cropped/turn_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/turn/frames_equal_canvas/turn_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "cone_varredura_feixe_busca",
+      "frame_count": 4,
+      "max_canvas": [
+        540,
+        540
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            434,
+            442
+          ],
+          "equal_canvas_size": [
+            540,
+            540
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_cropped/cone_varredura_feixe_busca_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_equal_canvas/cone_varredura_feixe_busca_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            522,
+            443
+          ],
+          "equal_canvas_size": [
+            540,
+            540
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_cropped/cone_varredura_feixe_busca_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_equal_canvas/cone_varredura_feixe_busca_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            540,
+            540
+          ],
+          "equal_canvas_size": [
+            540,
+            540
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_cropped/cone_varredura_feixe_busca_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_equal_canvas/cone_varredura_feixe_busca_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            506,
+            443
+          ],
+          "equal_canvas_size": [
+            540,
+            540
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_cropped/cone_varredura_feixe_busca_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/cone_varredura_feixe_busca/frames_equal_canvas/cone_varredura_feixe_busca_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "lockon_marcacao_alvo",
+      "frame_count": 5,
+      "max_canvas": [
+        470,
+        385
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            377,
+            384
+          ],
+          "equal_canvas_size": [
+            470,
+            385
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_cropped/lockon_marcacao_alvo_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_equal_canvas/lockon_marcacao_alvo_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            456,
+            384
+          ],
+          "equal_canvas_size": [
+            470,
+            385
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_cropped/lockon_marcacao_alvo_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_equal_canvas/lockon_marcacao_alvo_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            470,
+            384
+          ],
+          "equal_canvas_size": [
+            470,
+            385
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_cropped/lockon_marcacao_alvo_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_equal_canvas/lockon_marcacao_alvo_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            466,
+            385
+          ],
+          "equal_canvas_size": [
+            470,
+            385
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_cropped/lockon_marcacao_alvo_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_equal_canvas/lockon_marcacao_alvo_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            437,
+            382
+          ],
+          "equal_canvas_size": [
+            470,
+            385
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_cropped/lockon_marcacao_alvo_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/lockon_marcacao_alvo/frames_equal_canvas/lockon_marcacao_alvo_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "alarme_arcano_chamado",
+      "frame_count": 5,
+      "max_canvas": [
+        438,
+        359
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            221,
+            292
+          ],
+          "equal_canvas_size": [
+            438,
+            359
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_cropped/alarme_arcano_chamado_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_equal_canvas/alarme_arcano_chamado_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            294,
+            336
+          ],
+          "equal_canvas_size": [
+            438,
+            359
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_cropped/alarme_arcano_chamado_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_equal_canvas/alarme_arcano_chamado_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            386,
+            337
+          ],
+          "equal_canvas_size": [
+            438,
+            359
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_cropped/alarme_arcano_chamado_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_equal_canvas/alarme_arcano_chamado_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            438,
+            337
+          ],
+          "equal_canvas_size": [
+            438,
+            359
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_cropped/alarme_arcano_chamado_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_equal_canvas/alarme_arcano_chamado_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            339,
+            359
+          ],
+          "equal_canvas_size": [
+            438,
+            359
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_cropped/alarme_arcano_chamado_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/alarme_arcano_chamado/frames_equal_canvas/alarme_arcano_chamado_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "disparo_de_luz_contra_ataque",
+      "frame_count": 5,
+      "max_canvas": [
+        470,
+        705
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            452,
+            705
+          ],
+          "equal_canvas_size": [
+            470,
+            705
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_cropped/disparo_de_luz_contra_ataque_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_equal_canvas/disparo_de_luz_contra_ataque_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            461,
+            409
+          ],
+          "equal_canvas_size": [
+            470,
+            705
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_cropped/disparo_de_luz_contra_ataque_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_equal_canvas/disparo_de_luz_contra_ataque_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            470,
+            414
+          ],
+          "equal_canvas_size": [
+            470,
+            705
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_cropped/disparo_de_luz_contra_ataque_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_equal_canvas/disparo_de_luz_contra_ataque_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            469,
+            398
+          ],
+          "equal_canvas_size": [
+            470,
+            705
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_cropped/disparo_de_luz_contra_ataque_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_equal_canvas/disparo_de_luz_contra_ataque_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            433,
+            259
+          ],
+          "equal_canvas_size": [
+            470,
+            705
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_cropped/disparo_de_luz_contra_ataque_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/disparo_de_luz_contra_ataque/frames_equal_canvas/disparo_de_luz_contra_ataque_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "take_damage",
+      "frame_count": 5,
+      "max_canvas": [
+        301,
+        311
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            208,
+            310
+          ],
+          "equal_canvas_size": [
+            301,
+            311
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_cropped/take_damage_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_equal_canvas/take_damage_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            301,
+            311
+          ],
+          "equal_canvas_size": [
+            301,
+            311
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_cropped/take_damage_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_equal_canvas/take_damage_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            273,
+            310
+          ],
+          "equal_canvas_size": [
+            301,
+            311
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_cropped/take_damage_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_equal_canvas/take_damage_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            291,
+            309
+          ],
+          "equal_canvas_size": [
+            301,
+            311
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_cropped/take_damage_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_equal_canvas/take_damage_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            210,
+            310
+          ],
+          "equal_canvas_size": [
+            301,
+            311
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_cropped/take_damage_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/take_damage/frames_equal_canvas/take_damage_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "death",
+      "frame_count": 5,
+      "max_canvas": [
+        312,
+        389
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            208,
+            389
+          ],
+          "equal_canvas_size": [
+            312,
+            389
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_cropped/death_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_equal_canvas/death_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            295,
+            383
+          ],
+          "equal_canvas_size": [
+            312,
+            389
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_cropped/death_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_equal_canvas/death_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            312,
+            381
+          ],
+          "equal_canvas_size": [
+            312,
+            389
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_cropped/death_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_equal_canvas/death_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            295,
+            381
+          ],
+          "equal_canvas_size": [
+            312,
+            389
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_cropped/death_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_equal_canvas/death_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            213,
+            383
+          ],
+          "equal_canvas_size": [
+            312,
+            389
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_cropped/death_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/death/frames_equal_canvas/death_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "respawn_reativacao",
+      "frame_count": 5,
+      "max_canvas": [
+        293,
+        391
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            235,
+            365
+          ],
+          "equal_canvas_size": [
+            293,
+            391
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_cropped/respawn_reativacao_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_equal_canvas/respawn_reativacao_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            286,
+            367
+          ],
+          "equal_canvas_size": [
+            293,
+            391
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_cropped/respawn_reativacao_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_equal_canvas/respawn_reativacao_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            193,
+            379
+          ],
+          "equal_canvas_size": [
+            293,
+            391
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_cropped/respawn_reativacao_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_equal_canvas/respawn_reativacao_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            293,
+            391
+          ],
+          "equal_canvas_size": [
+            293,
+            391
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_cropped/respawn_reativacao_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_equal_canvas/respawn_reativacao_04.png"
+        },
+        {
+          "frame": 5,
+          "cropped_size": [
+            202,
+            391
+          ],
+          "equal_canvas_size": [
+            293,
+            391
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_cropped/respawn_reativacao_05.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/respawn_reativacao/frames_equal_canvas/respawn_reativacao_05.png"
+        }
+      ]
+    },
+    {
+      "animation": "estado_dormente",
+      "frame_count": 3,
+      "max_canvas": [
+        522,
+        252
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            150,
+            250
+          ],
+          "equal_canvas_size": [
+            522,
+            252
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_cropped/estado_dormente_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_equal_canvas/estado_dormente_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            522,
+            252
+          ],
+          "equal_canvas_size": [
+            522,
+            252
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_cropped/estado_dormente_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_equal_canvas/estado_dormente_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            147,
+            252
+          ],
+          "equal_canvas_size": [
+            522,
+            252
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_cropped/estado_dormente_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_dormente/frames_equal_canvas/estado_dormente_03.png"
+        }
+      ]
+    },
+    {
+      "animation": "estado_ativo",
+      "frame_count": 4,
+      "max_canvas": [
+        390,
+        304
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            157,
+            250
+          ],
+          "equal_canvas_size": [
+            390,
+            304
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_cropped/estado_ativo_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_equal_canvas/estado_ativo_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            390,
+            303
+          ],
+          "equal_canvas_size": [
+            390,
+            304
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_cropped/estado_ativo_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_equal_canvas/estado_ativo_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            390,
+            304
+          ],
+          "equal_canvas_size": [
+            390,
+            304
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_cropped/estado_ativo_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_equal_canvas/estado_ativo_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            163,
+            250
+          ],
+          "equal_canvas_size": [
+            390,
+            304
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_cropped/estado_ativo_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_ativo/frames_equal_canvas/estado_ativo_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "estado_alerta",
+      "frame_count": 4,
+      "max_canvas": [
+        360,
+        314
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            157,
+            314
+          ],
+          "equal_canvas_size": [
+            360,
+            314
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_cropped/estado_alerta_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_equal_canvas/estado_alerta_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            360,
+            314
+          ],
+          "equal_canvas_size": [
+            360,
+            314
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_cropped/estado_alerta_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_equal_canvas/estado_alerta_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            327,
+            314
+          ],
+          "equal_canvas_size": [
+            360,
+            314
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_cropped/estado_alerta_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_equal_canvas/estado_alerta_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            158,
+            314
+          ],
+          "equal_canvas_size": [
+            360,
+            314
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_cropped/estado_alerta_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_alerta/frames_equal_canvas/estado_alerta_04.png"
+        }
+      ]
+    },
+    {
+      "animation": "estado_sobrecarga",
+      "frame_count": 4,
+      "max_canvas": [
+        359,
+        284
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "cropped_size": [
+            157,
+            283
+          ],
+          "equal_canvas_size": [
+            359,
+            284
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_cropped/estado_sobrecarga_01.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_equal_canvas/estado_sobrecarga_01.png"
+        },
+        {
+          "frame": 2,
+          "cropped_size": [
+            359,
+            283
+          ],
+          "equal_canvas_size": [
+            359,
+            284
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_cropped/estado_sobrecarga_02.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_equal_canvas/estado_sobrecarga_02.png"
+        },
+        {
+          "frame": 3,
+          "cropped_size": [
+            327,
+            283
+          ],
+          "equal_canvas_size": [
+            359,
+            284
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_cropped/estado_sobrecarga_03.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_equal_canvas/estado_sobrecarga_03.png"
+        },
+        {
+          "frame": 4,
+          "cropped_size": [
+            158,
+            284
+          ],
+          "equal_canvas_size": [
+            359,
+            284
+          ],
+          "cropped_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_cropped/estado_sobrecarga_04.png",
+          "equal_canvas_path": "/mnt/data/sentinela_mistica_assets_individualizados/estado_sobrecarga/frames_equal_canvas/estado_sobrecarga_04.png"
+        }
+      ]
+    }
+  ]
+}

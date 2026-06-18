@@ -155,9 +155,12 @@ func _test_map_room() -> void:
 
 	var navigator := room.find_child("MapNavigator", true, false)
 	var gps_panel := room.find_child("GPSPanel", true, false)
+	var current_location_label := room.find_child("CurrentLocationLabel", true, false)
+	var navigation_detail_label := room.find_child("NavigationDetailLabel", true, false)
 	var map_overlay := room.find_child("WorldMapOverlay", true, false)
 	var player := room.find_child("Player", true, false)
-	if navigator == null or gps_panel == null or map_overlay == null or player == null:
+	var has_navigation_display := gps_panel != null or (current_location_label != null and navigation_detail_label != null)
+	if navigator == null or not has_navigation_display or map_overlay == null or player == null:
 		_fail("map room navigation stack is incomplete")
 		return
 

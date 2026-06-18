@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dnjlgdybckmlk"
+
+[deps]
+
+files=["res://assets/sprites/backgrounds/locations/awakening/manifest.folder.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.sheet.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.bbox.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.area.translation"]
+
+source_file="res://assets/sprites/backgrounds/locations/awakening/manifest.csv"
+dest_files=["res://assets/sprites/backgrounds/locations/awakening/manifest.folder.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.sheet.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.bbox.translation", "res://assets/sprites/backgrounds/locations/awakening/manifest.area.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

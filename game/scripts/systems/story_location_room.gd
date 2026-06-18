@@ -4,12 +4,14 @@ class_name StoryLocationRoom
 const TransitionZoneScene := preload("res://scenes/systems/TransitionZone.tscn")
 const StoryPuzzleNodeScript := preload("res://scripts/systems/story_puzzle_node.gd")
 const StoryPuzzleControllerScript := preload("res://scripts/systems/story_puzzle_controller.gd")
+const MapNavigatorScript := preload("res://scripts/systems/map_navigator.gd")
 const ENEMY_SCENES := {
 	"ancestral_abomination": preload("res://scenes/enemies/AncestralAbomination.tscn"),
 	"unstable_energy": preload("res://scenes/enemies/UnstableEnergy.tscn"),
 	"mystic_sentinel": preload("res://scenes/enemies/MysticSentinel.tscn"),
 	"fallen_shadow": preload("res://scenes/enemies/FallenShadow.tscn"),
 }
+const AWAKENING_ASSET_ROOT := "res://assets/sprites/backgrounds/locations/awakening/"
 
 @export var location_id: StringName = &"awakening"
 
@@ -32,10 +34,13 @@ func _ready() -> void:
 	_remove_test_only_content()
 	_create_story_layout()
 	_apply_location_identity()
+	_add_location_set_dressing()
 	_create_regional_lore()
 	_create_regional_collectible()
+	_create_story_map_access_pickup()
 	_create_regional_enemy()
 	_create_story_transitions()
+	_create_story_map_navigator()
 	_update_story_exit_lock()
 	_schedule_intro_dialogue()
 	_record_location_visit()
@@ -282,6 +287,240 @@ func _add_region_environment(region: String, tint: Color) -> void:
 		)
 
 
+func _add_location_set_dressing() -> void:
+	match String(location_id):
+		"awakening":
+			_add_awakening_set_dressing()
+
+
+func _add_awakening_set_dressing() -> void:
+	var background_fill := get_node_or_null("BackgroundFill") as Polygon2D
+	if background_fill != null:
+		background_fill.color = Color(0.13, 0.29, 0.32, 1.0)
+
+	var parallax_scene := get_node_or_null("ParallaxScene") as Node2D
+	if parallax_scene != null:
+		_add_awakening_parallax(parallax_scene)
+
+	_add_awakening_ground_composition()
+	_set_awakening_scene_notes()
+
+
+func _add_awakening_parallax(parallax_scene: Node2D) -> void:
+	var sky_layer := _create_parallax_layer(parallax_scene, "AwakeningSkyDistant", 0.0, -128)
+	for x_position in [520.0, 1940.0]:
+		_create_parallax_sprite(
+			sky_layer,
+			_awakening_asset("01_sky_distant/sky_parallax_strip_01.png"),
+			Vector2(x_position, 165),
+			260.0,
+			Color(0.82, 0.96, 0.96, 0.58)
+		)
+
+	var cloud_layer := _create_parallax_layer(parallax_scene, "AwakeningCloudMemory", 0.04, -118)
+	var cloud_specs := [
+		["01_sky_distant/cloud_cluster_01.png", Vector2(270, 92), 88.0, 0.28],
+		["01_sky_distant/cloud_cluster_02.png", Vector2(930, 130), 72.0, 0.22],
+		["01_sky_distant/cloud_cluster_03.png", Vector2(1610, 80), 52.0, 0.20],
+		["01_sky_distant/cloud_cluster_04.png", Vector2(2290, 145), 44.0, 0.18],
+	]
+	for spec in cloud_specs:
+		_create_parallax_sprite(
+			cloud_layer,
+			_awakening_asset(String(spec[0])),
+			spec[1],
+			float(spec[2]),
+			Color(0.86, 0.98, 0.97, float(spec[3]))
+		)
+
+	var mountain_layer := _create_parallax_layer(parallax_scene, "AwakeningMountainVeil", 0.10, -108)
+	for x_position in [360.0, 1100.0, 1880.0, 2600.0]:
+		_create_parallax_sprite(
+			mountain_layer,
+			_awakening_asset("01_sky_distant/mountain_range_strip_02.png"),
+			Vector2(x_position, 330),
+			78.0,
+			Color(0.51, 0.72, 0.70, 0.34)
+		)
+
+	var distant_architecture := _create_parallax_layer(parallax_scene, "AwakeningDistantRuinLine", 0.20, -98)
+	for spec in [
+		["02_distant_architecture/distant_architecture_strip_02.png", 510.0, 188.0],
+		["02_distant_architecture/distant_architecture_strip_04.png", 1750.0, 176.0],
+		["02_distant_architecture/distant_architecture_strip_01.png", 2600.0, 150.0],
+	]:
+		_create_parallax_sprite(
+			distant_architecture,
+			_awakening_asset(String(spec[0])),
+			Vector2(float(spec[1]), 382),
+			float(spec[2]),
+			Color(0.38, 0.54, 0.50, 0.34)
+		)
+
+	var forest_layer := _create_parallax_layer(parallax_scene, "AwakeningForestEdge", 0.34, -82)
+	for spec in [
+		["04_midground_nature/forest_edge_strip_01.png", 260.0, 175.0],
+		["04_midground_nature/forest_edge_strip_03.png", 780.0, 155.0],
+		["04_midground_nature/forest_edge_strip_02.png", 1480.0, 185.0],
+		["04_midground_nature/forest_edge_strip_04.png", 2180.0, 165.0],
+		["04_midground_nature/forest_edge_strip_01.png", 2760.0, 155.0],
+	]:
+		_create_parallax_sprite(
+			forest_layer,
+			_awakening_asset(String(spec[0])),
+			Vector2(float(spec[1]), 414),
+			float(spec[2]),
+			Color(0.37, 0.58, 0.45, 0.52)
+		)
+
+	var shrine_layer := _create_parallax_layer(parallax_scene, "AwakeningShrineMemory", 0.48, -58)
+	for spec in [
+		["03_midground_ruins/arch_ruin_03.png", 650.0, 206.0, 0.58],
+		["03_midground_ruins/sanctuary_ruin_cluster_03.png", 1270.0, 188.0, 0.62],
+		["03_midground_ruins/arch_ruin_02.png", 2030.0, 220.0, 0.55],
+		["03_midground_ruins/standing_stone_05.png", 2420.0, 170.0, 0.45],
+	]:
+		_create_parallax_sprite(
+			shrine_layer,
+			_awakening_asset(String(spec[0])),
+			Vector2(float(spec[1]), 393),
+			float(spec[2]),
+			Color(0.54, 0.67, 0.57, float(spec[3]))
+		)
+
+	var haze_layer := _create_parallax_layer(parallax_scene, "AwakeningLowHaze", 0.70, -36)
+	for spec in [
+		["01_sky_distant/mist_haze_strip_01.png", 420.0, 70.0],
+		["01_sky_distant/mist_haze_strip_03.png", 1120.0, 78.0],
+		["01_sky_distant/mist_haze_strip_05.png", 1850.0, 82.0],
+		["01_sky_distant/mist_haze_strip_04.png", 2450.0, 68.0],
+	]:
+		_create_parallax_sprite(
+			haze_layer,
+			_awakening_asset(String(spec[0])),
+			Vector2(float(spec[1]), 430),
+			float(spec[2]),
+			Color(0.66, 0.94, 0.88, 0.22)
+		)
+
+
+func _add_awakening_ground_composition() -> void:
+	var dressing := Node2D.new()
+	dressing.name = "AwakeningSetDressing"
+	dressing.set_meta("scene_role", "historia_01_clareira_do_despertar")
+	dressing.set_meta("level_design_note", "Tutorial contemplativo: acordar, ler a cicatriz, alinhar a primeira Ressonancia e estabilizar a passagem.")
+	add_child(dressing)
+
+	var back_props := [
+		["TreeFrameLeft", "04_midground_nature/tree_medium_02.png", Vector2(45, GROUND_SURFACE_Y), 238.0, -18, Color(0.46, 0.68, 0.50, 0.64)],
+		["TreeFrameCenter", "04_midground_nature/tree_medium_01.png", Vector2(1360, GROUND_SURFACE_Y), 214.0, -17, Color(0.44, 0.64, 0.48, 0.56)],
+		["TreeFrameRight", "04_midground_nature/tree_medium_03.png", Vector2(2675, GROUND_SURFACE_Y), 252.0, -18, Color(0.42, 0.62, 0.46, 0.64)],
+		["RuinGateLeft", "03_midground_ruins/standing_stone_01.png", Vector2(365, GROUND_SURFACE_Y), 118.0, -13, Color(0.72, 0.78, 0.66, 0.86)],
+		["RuinGateRight", "03_midground_ruins/standing_stone_02.png", Vector2(525, GROUND_SURFACE_Y), 112.0, -13, Color(0.72, 0.78, 0.66, 0.86)],
+		["MemoryAltar", "03_midground_ruins/resonance_altar_01.png", Vector2(1120, GROUND_SURFACE_Y), 96.0, -11, Color(0.72, 0.93, 0.88, 0.94)],
+		["ExitStandingStone", "03_midground_ruins/standing_stone_05.png", Vector2(2510, GROUND_SURFACE_Y), 138.0, -13, Color(0.65, 0.82, 0.74, 0.72)],
+	]
+	for spec in back_props:
+		var prop := _create_grounded_prop(
+			String(spec[0]),
+			spec[2],
+			float(spec[3]),
+			_awakening_asset(String(spec[1])),
+			int(spec[4]),
+			spec[5]
+		)
+		prop.reparent(dressing, true)
+
+	var foreground_props := [
+		["RootLeft", "05_foreground/root_log_cluster_02.png", Vector2(235, GROUND_SURFACE_Y + 7), 58.0, -3, Color(0.82, 0.88, 0.72, 0.88)],
+		["RootBridge", "05_foreground/root_log_cluster_04.png", Vector2(760, GROUND_SURFACE_Y + 8), 47.0, -3, Color(0.76, 0.82, 0.66, 0.78)],
+		["StoneNestLore", "05_foreground/rock_cluster_08.png", Vector2(1475, GROUND_SURFACE_Y + 3), 62.0, -4, Color(0.78, 0.84, 0.76, 0.82)],
+		["OldLogEnemyCue", "05_foreground/stump_or_log_01.png", Vector2(2095, GROUND_SURFACE_Y + 4), 70.0, -4, Color(0.76, 0.84, 0.70, 0.82)],
+		["ExitRoots", "05_foreground/root_log_cluster_05.png", Vector2(2460, GROUND_SURFACE_Y + 9), 52.0, -3, Color(0.72, 0.82, 0.70, 0.76)],
+	]
+	for spec in foreground_props:
+		var prop := _create_grounded_prop(
+			String(spec[0]),
+			spec[2],
+			float(spec[3]),
+			_awakening_asset(String(spec[1])),
+			int(spec[4]),
+			spec[5]
+		)
+		prop.reparent(dressing, true)
+
+	for index in range(10):
+		var grass := _create_grounded_prop(
+			"AwakeningGrass%02d" % index,
+			Vector2(160.0 + float(index) * 260.0, GROUND_SURFACE_Y + 2.0),
+			28.0 + float(index % 3) * 4.0,
+			_awakening_asset("06_atmosphere/grass_tuft_%02d.png" % (index + 1)),
+			-2,
+			Color(0.75, 0.96, 0.70, 0.82)
+		)
+		grass.reparent(dressing, true)
+
+	for index in range(6):
+		var flower := _create_grounded_prop(
+			"AwakeningFlower%02d" % index,
+			Vector2(510.0 + float(index) * 315.0, GROUND_SURFACE_Y + 4.0),
+			24.0,
+			_awakening_asset("06_atmosphere/flower_patch_%02d.png" % (index + 1)),
+			-1,
+			Color(0.92, 0.82, 0.58, 0.70)
+		)
+		flower.reparent(dressing, true)
+
+	var light_layer := Node2D.new()
+	light_layer.name = "AwakeningLightRays"
+	light_layer.z_index = 28
+	dressing.add_child(light_layer)
+	for spec in [
+		["06_atmosphere/light_ray_01.png", Vector2(620, 250), 160.0, 0.18],
+		["06_atmosphere/light_ray_05.png", Vector2(1220, 220), 180.0, 0.15],
+		["06_atmosphere/light_ray_08.png", Vector2(1920, 240), 150.0, 0.13],
+	]:
+		var ray := _make_scaled_sprite(
+			"AwakeningRay",
+			_awakening_asset(String(spec[0])),
+			Vector2(float(spec[2]), float(spec[2])),
+			Color(0.92, 1.0, 0.82, float(spec[3]))
+		)
+		ray.position = spec[1]
+		light_layer.add_child(ray)
+
+	var story_layout := get_node_or_null("StoryLayout") as Node2D
+	if story_layout != null:
+		story_layout.set_meta("art_pass", "clareira_do_despertar_assets_v1")
+
+
+func _set_awakening_scene_notes() -> void:
+	var story_layout := get_node_or_null("StoryLayout") as Node2D
+	if story_layout == null:
+		return
+	story_layout.set_meta("beat_01", "O Escriba desperta protegido por arvores e pedras de memoria.")
+	story_layout.set_meta("beat_02", "A ruina central enquadra o primeiro no de Ressonancia.")
+	story_layout.set_meta("beat_03", "A saida fica visualmente mais clara depois da cicatriz, puzzle e sentinela.")
+
+
+func _awakening_asset(relative_path: String) -> String:
+	return "%s%s" % [AWAKENING_ASSET_ROOT, relative_path]
+
+
+func _make_scaled_sprite(node_name: String, texture_path: String, target_size: Vector2, tint: Color) -> Sprite2D:
+	var texture: Texture2D = load(texture_path)
+	var sprite := Sprite2D.new()
+	sprite.name = node_name
+	sprite.texture = texture
+	sprite.modulate = tint
+	if texture != null:
+		var texture_size := texture.get_size()
+		if texture_size.x > 0.0 and texture_size.y > 0.0:
+			var uniform_scale := minf(target_size.x / texture_size.x, target_size.y / texture_size.y)
+			sprite.scale = Vector2(uniform_scale, uniform_scale)
+	return sprite
+
+
 func _create_regional_lore() -> void:
 	var lore_key := StringName(location_profile.get("lore", ""))
 	var registry := get_node_or_null("/root/DataRegistry")
@@ -328,6 +567,13 @@ func _create_regional_collectible() -> void:
 		return
 
 
+func _create_story_map_access_pickup() -> void:
+	if String(location_id) != "awakening":
+		return
+	var pickup := _create_map_access_pickup("MapAccessPickup", _vector_from_data(layout_profile.get("map_access_position", [520, 330])))
+	pickup.set("interaction_text", "E: recolher lente cartografica")
+
+
 func _create_regional_enemy() -> void:
 	var enemy_id := String(location_profile.get("enemy", ""))
 	if enemy_id.is_empty() or not ENEMY_SCENES.has(enemy_id):
@@ -348,6 +594,25 @@ func _create_regional_enemy() -> void:
 		_audio_sfx("confirm")
 	)
 	add_child(enemy)
+
+
+func _create_story_map_navigator() -> void:
+	var navigator := MapNavigatorScript.new() as MapNavigator
+	navigator.name = "MapNavigator"
+	navigator.player = player
+	var region := String(location_profile.get("region", "awakening"))
+	navigator.register_destination(
+		location_id,
+		String(location_profile.get("name", location_id)),
+		player.global_position,
+		false,
+		region
+	)
+	add_child(navigator)
+
+	var pickup := get_node_or_null("MapAccessPickup")
+	if pickup != null:
+		pickup.connect("collected", Callable(navigator, "refresh_map_access"))
 
 
 func _create_story_transitions() -> void:

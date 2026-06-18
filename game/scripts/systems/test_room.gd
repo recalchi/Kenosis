@@ -11,6 +11,7 @@ const CompletionZoneScript := preload("res://scripts/systems/completion_zone.gd"
 const CheckpointStationScript := preload("res://scripts/systems/checkpoint_station.gd")
 const MemoryFragmentScript := preload("res://scripts/interactables/memory_fragment.gd")
 const MemorySealScript := preload("res://scripts/interactables/memory_seal.gd")
+const MapAccessPickupScript := preload("res://scripts/interactables/map_access_pickup.gd")
 const PrototypeHUDScript := preload("res://scripts/ui/prototype_hud.gd")
 const CorruptedPatrollerScene := preload("res://scenes/enemies/CorruptedPatroller.tscn")
 const StealthCoverScene := preload("res://scenes/interactables/StealthCover.tscn")
@@ -567,6 +568,32 @@ func _create_memory_fragment(node_name: String, position: Vector2) -> Area2D:
 		_audio_sfx("confirm")
 	)
 	return fragment
+
+
+func _create_map_access_pickup(node_name: String, position: Vector2) -> Area2D:
+	var pickup := MapAccessPickupScript.new() as Area2D
+	pickup.name = node_name
+	pickup.process_mode = Node.PROCESS_MODE_PAUSABLE
+	pickup.position = position
+	add_child(pickup)
+
+	var shape := CircleShape2D.new()
+	shape.radius = 32.0
+	var collision := CollisionShape2D.new()
+	collision.shape = shape
+	pickup.add_child(collision)
+
+	var visual := _make_sprite_visual("MapAccessSprite", "res://assets/ui/reference/map_checkpoint_marker.png", Vector2(42, 48), Color(0.88, 0.78, 0.46, 1.0))
+	visual.position.y = -32.0
+	pickup.add_child(visual)
+	var bob := visual.create_tween().set_loops()
+	bob.tween_property(visual, "position:y", -40.0, 0.72).set_trans(Tween.TRANS_SINE)
+	bob.tween_property(visual, "position:y", -32.0, 0.72).set_trans(Tween.TRANS_SINE)
+	pickup.connect("collected", func() -> void:
+		hud.show_message("Lente cartografica sincronizada. M ou TAB abre o mapa.")
+		_audio_sfx("confirm")
+	)
+	return pickup
 
 
 func _create_memory_seal(position: Vector2, sealed_platform: StaticBody2D) -> Area2D:

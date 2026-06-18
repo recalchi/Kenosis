@@ -264,6 +264,41 @@ Os prefabs reutilizaveis ficam em `game/scenes/systems/`:
 - Expansao: `tools/run_expansion_test.ps1`.
 - Novos assets devem passar pelo importador headless antes dos testes.
 
+### Mapa Interativo
+
+- `MapNavigator` monta uma camada escalavel sobre `central_map.png`.
+- Os 16 destinos usam coordenadas nativas do atlas de `1456x1088`.
+- Cada simbolo desenhado recebe um `Button` transparente como hotspot; o
+  sistema nao desenha badges, textos ou marcadores genericos sobre a arte.
+- Pontos bloqueados reutilizam um recorte circular da propria textura convertido
+  para RGBA e escala de cinza; pontos liberados preservam a cor original.
+- O posicionamento considera o retangulo real renderizado pelo
+  `STRETCH_KEEP_ASPECT_CENTERED`, preservando o alinhamento em outras resolucoes.
+- As cinco ancoras continuam usando as posicoes seguras da sala de expansao.
+- `SaveSystem.has_map_access()` controla o desbloqueio pela Lente Cartografica.
+- `MapAccessPickup` e um interativo persistente reutilizado em teste e historia.
+- Descoberta consulta `unlocked_locations`; itens e acesso consultam
+  `collected_items`.
+- O mapa suporta pan, zoom, tween de abertura e marcador dourado da posicao
+  atual, interpolado entre as ancoras do campo.
+- A abertura usa oito frames transparentes de `assets/ui/map_opening`, exibidos
+  em sequencia dentro da area do atlas enquanto a camada consome input.
+- `MapPanel` e `RoutePanel` ficam ocultos durante todos os frames e sao
+  revelados apenas no crossfade final, evitando dois mapas simultaneos.
+- `PrototypeHUD.set_navigation()` integra localizacao, distancia, missao e
+  pontuacao no mesmo `ObjectivePanel`; `MapNavigator` nao cria outro painel.
+- Clicar no atlas seleciona e descreve a fase; o teleporte permanece como acao
+  explicita nos botoes laterais.
+- `can_travel_to_story_location()` permite viagem apenas para locais presentes
+  em `unlocked_locations`, diferentes da fase atual e com cena valida no
+  catalogo `levels.json`.
+- `travel_to_story_location()` solicita a troca de cena e somente depois
+  persiste a nova `current_location`.
+- A troca de fase e executada pelo autoload `StoryTransition`; o
+  `MapNavigator` nunca continua operando depois que sua cena e removida.
+- Teleporte pode ser desabilitado por destino para impedir saltos invalidos nas
+  salas narrativas.
+
 ## 12. Story Locations
 
 - As 16 cenas ficam em `game/scenes/levels/locations/`.

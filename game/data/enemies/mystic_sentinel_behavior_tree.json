@@ -1,0 +1,162 @@
+{
+  "enemy_id": "mystic_sentinel",
+  "display_name": "Sentinela Mistica",
+  "root": "arcane_area_denial_sentinel",
+  "states": [
+    {
+      "id": "idle",
+      "animation": "idle",
+      "purpose": "Mantem a sentinela ativa visualmente antes de adquirir alvo.",
+      "transitions": [
+        {
+          "to": "patrol",
+          "when": "spawn_finished_or_target_missing"
+        }
+      ]
+    },
+    {
+      "id": "patrol",
+      "animation": "estado_ativo",
+      "purpose": "Flutua na area e guarda a zona arcana usando a animacao de presenca legivel.",
+      "transitions": [
+        {
+          "to": "scan",
+          "when": "target_enters_detection_radius"
+        },
+        {
+          "to": "damaged",
+          "when": "resonance_received"
+        }
+      ]
+    },
+    {
+      "id": "scan",
+      "animation": "scan_observacao > cone_varredura_feixe_busca",
+      "purpose": "Varre a area e confirma se a assinatura do jogador esta visivel.",
+      "transitions": [
+        {
+          "to": "alert",
+          "when": "target_signature_visible"
+        },
+        {
+          "to": "patrol",
+          "when": "target_signature_hidden_or_lost"
+        }
+      ]
+    },
+    {
+      "id": "alert",
+      "animation": "estado_alerta",
+      "purpose": "Fixa a atencao no jogador e prepara marcacao de alvo.",
+      "transitions": [
+        {
+          "to": "lockon",
+          "when": "target_inside_attack_range"
+        },
+        {
+          "to": "patrol",
+          "when": "target_signature_hidden_or_lost"
+        }
+      ]
+    },
+    {
+      "id": "lockon",
+      "animation": "lockon_marcacao_alvo",
+      "purpose": "Marca o jogador antes do disparo arcano.",
+      "transitions": [
+        {
+          "to": "attack",
+          "when": "attack_cooldown_ready"
+        }
+      ]
+    },
+    {
+      "id": "attack",
+      "animation": "disparo_de_luz_contra_ataque",
+      "purpose": "Executa o disparo de luz usado pelo ataque de longo alcance.",
+      "transitions": [
+        {
+          "to": "alert",
+          "when": "attack_recovery_finished_and_target_visible"
+        },
+        {
+          "to": "patrol",
+          "when": "attack_recovery_finished_and_target_lost"
+        }
+      ]
+    },
+    {
+      "id": "damaged",
+      "animation": "take_damage",
+      "purpose": "Reage a ressonancia recebida e decide se retorna ao alerta ou morre.",
+      "transitions": [
+        {
+          "to": "alert",
+          "when": "health_remains"
+        },
+        {
+          "to": "defeated",
+          "when": "health_reaches_zero"
+        }
+      ]
+    },
+    {
+      "id": "defeated",
+      "animation": "death",
+      "purpose": "Desativa a sentinela e entrega recompensa.",
+      "transitions": [
+        {
+          "to": "respawning",
+          "when": "death_fade_finished"
+        }
+      ]
+    },
+    {
+      "id": "respawning",
+      "animation": "respawn_reativacao",
+      "purpose": "Reativa o constructo arcano depois do intervalo de respawn.",
+      "transitions": [
+        {
+          "to": "patrol",
+          "when": "reactivation_timer_finished"
+        }
+      ]
+    }
+  ],
+  "animation_inventory": {
+    "active_aliases": {
+      "move": "estado_ativo",
+      "alert": "estado_alerta",
+      "attack": "disparo_de_luz_contra_ataque",
+      "damage": "take_damage",
+      "respawn": "respawn_reativacao"
+    },
+    "complete_assets": [
+      "idle",
+      "patrulha_flutuacao",
+      "scan_observacao",
+      "pulso_deteccao",
+      "idle_alerta",
+      "turn",
+      "cone_varredura_feixe_busca",
+      "lockon_marcacao_alvo",
+      "alarme_arcano_chamado",
+      "disparo_de_luz_contra_ataque",
+      "take_damage",
+      "death",
+      "respawn_reativacao",
+      "estado_dormente",
+      "estado_ativo",
+      "estado_alerta",
+      "estado_sobrecarga"
+    ],
+    "pending_hooks": {
+      "estado_dormente": "Entrada dormente ou sentinela inativa no mapa.",
+      "pulso_deteccao": "Pulso periodico de deteccao.",
+      "alarme_arcano_chamado": "Chamada de reforco ou alarme da sala.",
+      "estado_sobrecarga": "Fase futura de baixa vida.",
+      "turn": "Giro visual em bordas de patrulha.",
+      "patrulha_flutuacao": "Variante compacta de patrulha; move usa estado_ativo para leitura."
+    }
+  }
+}

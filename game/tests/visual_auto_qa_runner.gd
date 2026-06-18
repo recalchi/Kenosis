@@ -19,6 +19,10 @@ func _run() -> void:
 	var save_system := root.get_node_or_null("SaveSystem")
 	if save_system != null:
 		save_system.begin_test_session()
+		var test_data: Dictionary = save_system.get_data()
+		test_data["current_location"] = "awakening"
+		test_data["unlocked_locations"] = ["awakening", "echo_trail"]
+		save_system.set("_data", test_data)
 
 	await _capture_test_room()
 	await _capture_map_room()
@@ -67,11 +71,19 @@ func _capture_map_room() -> void:
 	var room := _instantiate_scene(MAP_ROOM_PATH)
 	if room == null:
 		return
+	var save_system := root.get_node_or_null("SaveSystem")
+	if save_system != null:
+		save_system.set_map_access(true)
 	await _settle_frames(30)
 	var navigator := room.find_child("MapNavigator", true, false) as MapNavigator
 	if navigator != null:
 		navigator.set_map_visible(true)
 	await _settle_frames(8)
+	await _capture("map_opening_animation", "Pergaminho do mapa em abertura")
+	await _settle_frames(70)
+	if navigator != null:
+		navigator.call("_select_native_point", "echo_trail")
+	await _settle_frames(2)
 	await _capture("map_overlay", "Mapa central aberto")
 	if navigator != null:
 		navigator.set_map_visible(false)

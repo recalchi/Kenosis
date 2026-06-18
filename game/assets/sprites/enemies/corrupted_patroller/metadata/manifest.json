@@ -1,0 +1,777 @@
+{
+  "asset_pack": "patrulheiro_corrompido_assets_individualizados",
+  "enemy": "Patrulheiro Corrompido",
+  "format": "PNG RGBA",
+  "notes": [
+    "frames_equal_canvas: cada frame mantém a mesma célula/tamanho dentro da animação, ideal para importar sem jitter.",
+    "frames_cropped: cada frame está recortado ao conteúdo com pequena margem transparente.",
+    "sheets_transparent: sprite sheets limpos com fundo removido.",
+    "Os PNGs foram tratados para fundo vazado a partir das gerações aprovadas nesta conversa."
+  ],
+  "animations": {
+    "idle": {
+      "frame_count": 4,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_idle_sheet_4f.png",
+      "source_sheet_px": [
+        2508,
+        627
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        627,
+        627
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/idle/patrulheiro_corrompido_idle_f01.png",
+          "cropped_file": "frames_cropped/idle/patrulheiro_corrompido_idle_f01.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            450,
+            525
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/idle/patrulheiro_corrompido_idle_f02.png",
+          "cropped_file": "frames_cropped/idle/patrulheiro_corrompido_idle_f02.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            446,
+            522
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/idle/patrulheiro_corrompido_idle_f03.png",
+          "cropped_file": "frames_cropped/idle/patrulheiro_corrompido_idle_f03.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            455,
+            499
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/idle/patrulheiro_corrompido_idle_f04.png",
+          "cropped_file": "frames_cropped/idle/patrulheiro_corrompido_idle_f04.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            460,
+            538
+          ]
+        }
+      ]
+    },
+    "walk_furtivo": {
+      "frame_count": 4,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_walk_furtivo_sheet_4f.png",
+      "source_sheet_px": [
+        2508,
+        627
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        627,
+        627
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f01.png",
+          "cropped_file": "frames_cropped/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f01.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            463,
+            447
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f02.png",
+          "cropped_file": "frames_cropped/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f02.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            465,
+            470
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f03.png",
+          "cropped_file": "frames_cropped/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f03.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            468,
+            410
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f04.png",
+          "cropped_file": "frames_cropped/walk_furtivo/patrulheiro_corrompido_walk_furtivo_f04.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            451,
+            450
+          ]
+        }
+      ]
+    },
+    "crouch_stealth": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_crouch_stealth_sheet_3f.png",
+      "source_sheet_px": [
+        2172,
+        724
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        724,
+        724
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f01.png",
+          "cropped_file": "frames_cropped/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f01.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            530,
+            361
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f02.png",
+          "cropped_file": "frames_cropped/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f02.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            668,
+            357
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f03.png",
+          "cropped_file": "frames_cropped/crouch_stealth/patrulheiro_corrompido_crouch_stealth_f03.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            592,
+            338
+          ]
+        }
+      ]
+    },
+    "crouch_walk": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_crouch_walk_sheet_3f.png",
+      "source_sheet_px": [
+        2172,
+        724
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        724,
+        724
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/crouch_walk/patrulheiro_corrompido_crouch_walk_f01.png",
+          "cropped_file": "frames_cropped/crouch_walk/patrulheiro_corrompido_crouch_walk_f01.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            570,
+            405
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/crouch_walk/patrulheiro_corrompido_crouch_walk_f02.png",
+          "cropped_file": "frames_cropped/crouch_walk/patrulheiro_corrompido_crouch_walk_f02.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            564,
+            367
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/crouch_walk/patrulheiro_corrompido_crouch_walk_f03.png",
+          "cropped_file": "frames_cropped/crouch_walk/patrulheiro_corrompido_crouch_walk_f03.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            609,
+            297
+          ]
+        }
+      ]
+    },
+    "attack_golpe_rapido": {
+      "frame_count": 4,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_attack_golpe_rapido_sheet_4f.png",
+      "source_sheet_px": [
+        2508,
+        627
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        627,
+        627
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f01.png",
+          "cropped_file": "frames_cropped/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f01.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            402,
+            403
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f02.png",
+          "cropped_file": "frames_cropped/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f02.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            560,
+            391
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f03.png",
+          "cropped_file": "frames_cropped/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f03.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            554,
+            350
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f04.png",
+          "cropped_file": "frames_cropped/attack_golpe_rapido/patrulheiro_corrompido_attack_golpe_rapido_f04.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            570,
+            366
+          ]
+        }
+      ]
+    },
+    "attack_ataque_critico": {
+      "frame_count": 4,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_attack_ataque_critico_sheet_4f.png",
+      "source_sheet_px": [
+        2508,
+        627
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        627,
+        627
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f01.png",
+          "cropped_file": "frames_cropped/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f01.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            457,
+            360
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f02.png",
+          "cropped_file": "frames_cropped/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f02.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            566,
+            360
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f03.png",
+          "cropped_file": "frames_cropped/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f03.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            566,
+            339
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f04.png",
+          "cropped_file": "frames_cropped/attack_ataque_critico/patrulheiro_corrompido_attack_ataque_critico_f04.png",
+          "equal_canvas_size": [
+            627,
+            627
+          ],
+          "cropped_size": [
+            568,
+            403
+          ]
+        }
+      ]
+    },
+    "backstab": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_backstab_sheet_3f.png",
+      "source_sheet_px": [
+        2172,
+        724
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        724,
+        724
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/backstab/patrulheiro_corrompido_backstab_f01.png",
+          "cropped_file": "frames_cropped/backstab/patrulheiro_corrompido_backstab_f01.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            543,
+            534
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/backstab/patrulheiro_corrompido_backstab_f02.png",
+          "cropped_file": "frames_cropped/backstab/patrulheiro_corrompido_backstab_f02.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            717,
+            496
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/backstab/patrulheiro_corrompido_backstab_f03.png",
+          "cropped_file": "frames_cropped/backstab/patrulheiro_corrompido_backstab_f03.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            563,
+            534
+          ]
+        }
+      ]
+    },
+    "take_damage": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_take_damage_sheet_3f.png",
+      "source_sheet_px": [
+        2172,
+        724
+      ],
+      "row_index": 0,
+      "row_count": 1,
+      "equal_frame_box_px": [
+        724,
+        724
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/take_damage/patrulheiro_corrompido_take_damage_f01.png",
+          "cropped_file": "frames_cropped/take_damage/patrulheiro_corrompido_take_damage_f01.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            421,
+            546
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/take_damage/patrulheiro_corrompido_take_damage_f02.png",
+          "cropped_file": "frames_cropped/take_damage/patrulheiro_corrompido_take_damage_f02.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            389,
+            456
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/take_damage/patrulheiro_corrompido_take_damage_f03.png",
+          "cropped_file": "frames_cropped/take_damage/patrulheiro_corrompido_take_damage_f03.png",
+          "equal_canvas_size": [
+            724,
+            724
+          ],
+          "cropped_size": [
+            410,
+            399
+          ]
+        }
+      ]
+    },
+    "stop_idle_alerta": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_stop_turn_sheet.png",
+      "source_sheet_px": [
+        1448,
+        1086
+      ],
+      "row_index": 0,
+      "row_count": 2,
+      "equal_frame_box_px": [
+        482,
+        543
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f01.png",
+          "cropped_file": "frames_cropped/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f01.png",
+          "equal_canvas_size": [
+            482,
+            543
+          ],
+          "cropped_size": [
+            223,
+            316
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f02.png",
+          "cropped_file": "frames_cropped/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f02.png",
+          "equal_canvas_size": [
+            482,
+            543
+          ],
+          "cropped_size": [
+            482,
+            318
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f03.png",
+          "cropped_file": "frames_cropped/stop_idle_alerta/patrulheiro_corrompido_stop_idle_alerta_f03.png",
+          "equal_canvas_size": [
+            484,
+            543
+          ],
+          "cropped_size": [
+            197,
+            314
+          ]
+        }
+      ]
+    },
+    "turn": {
+      "frame_count": 5,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_stop_turn_sheet.png",
+      "source_sheet_px": [
+        1448,
+        1086
+      ],
+      "row_index": 1,
+      "row_count": 2,
+      "equal_frame_box_px": [
+        289,
+        543
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/turn/patrulheiro_corrompido_turn_f01.png",
+          "cropped_file": "frames_cropped/turn/patrulheiro_corrompido_turn_f01.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            231,
+            316
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/turn/patrulheiro_corrompido_turn_f02.png",
+          "cropped_file": "frames_cropped/turn/patrulheiro_corrompido_turn_f02.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            277,
+            320
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/turn/patrulheiro_corrompido_turn_f03.png",
+          "cropped_file": "frames_cropped/turn/patrulheiro_corrompido_turn_f03.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            211,
+            307
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/turn/patrulheiro_corrompido_turn_f04.png",
+          "cropped_file": "frames_cropped/turn/patrulheiro_corrompido_turn_f04.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            279,
+            303
+          ]
+        },
+        {
+          "frame": 5,
+          "equal_canvas_file": "frames_equal_canvas/turn/patrulheiro_corrompido_turn_f05.png",
+          "cropped_file": "frames_cropped/turn/patrulheiro_corrompido_turn_f05.png",
+          "equal_canvas_size": [
+            292,
+            543
+          ],
+          "cropped_size": [
+            214,
+            311
+          ]
+        }
+      ]
+    },
+    "death": {
+      "frame_count": 5,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_death_respawn_sheet.png",
+      "source_sheet_px": [
+        1448,
+        1086
+      ],
+      "row_index": 0,
+      "row_count": 2,
+      "equal_frame_box_px": [
+        289,
+        543
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/death/patrulheiro_corrompido_death_f01.png",
+          "cropped_file": "frames_cropped/death/patrulheiro_corrompido_death_f01.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            244,
+            252
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/death/patrulheiro_corrompido_death_f02.png",
+          "cropped_file": "frames_cropped/death/patrulheiro_corrompido_death_f02.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            289,
+            187
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/death/patrulheiro_corrompido_death_f03.png",
+          "cropped_file": "frames_cropped/death/patrulheiro_corrompido_death_f03.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            289,
+            231
+          ]
+        },
+        {
+          "frame": 4,
+          "equal_canvas_file": "frames_equal_canvas/death/patrulheiro_corrompido_death_f04.png",
+          "cropped_file": "frames_cropped/death/patrulheiro_corrompido_death_f04.png",
+          "equal_canvas_size": [
+            289,
+            543
+          ],
+          "cropped_size": [
+            281,
+            238
+          ]
+        },
+        {
+          "frame": 5,
+          "equal_canvas_file": "frames_equal_canvas/death/patrulheiro_corrompido_death_f05.png",
+          "cropped_file": "frames_cropped/death/patrulheiro_corrompido_death_f05.png",
+          "equal_canvas_size": [
+            292,
+            543
+          ],
+          "cropped_size": [
+            217,
+            260
+          ]
+        }
+      ]
+    },
+    "respawn_reformacao": {
+      "frame_count": 3,
+      "sheet": "sheets_transparent/patrulheiro_corrompido_death_respawn_sheet.png",
+      "source_sheet_px": [
+        1448,
+        1086
+      ],
+      "row_index": 1,
+      "row_count": 2,
+      "equal_frame_box_px": [
+        482,
+        543
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "equal_canvas_file": "frames_equal_canvas/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f01.png",
+          "cropped_file": "frames_cropped/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f01.png",
+          "equal_canvas_size": [
+            482,
+            543
+          ],
+          "cropped_size": [
+            209,
+            239
+          ]
+        },
+        {
+          "frame": 2,
+          "equal_canvas_file": "frames_equal_canvas/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f02.png",
+          "cropped_file": "frames_cropped/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f02.png",
+          "equal_canvas_size": [
+            482,
+            543
+          ],
+          "cropped_size": [
+            482,
+            260
+          ]
+        },
+        {
+          "frame": 3,
+          "equal_canvas_file": "frames_equal_canvas/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f03.png",
+          "cropped_file": "frames_cropped/respawn_reformacao/patrulheiro_corrompido_respawn_reformacao_f03.png",
+          "equal_canvas_size": [
+            484,
+            543
+          ],
+          "cropped_size": [
+            161,
+            244
+          ]
+        }
+      ]
+    }
+  }
+}

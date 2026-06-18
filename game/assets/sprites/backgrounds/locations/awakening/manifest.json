@@ -1,0 +1,1206 @@
+[
+  {
+    "file": "01_sky_distant/sky_parallax_strip_01.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "60,63,1418,226",
+    "area": 209677
+  },
+  {
+    "file": "01_sky_distant/sky_parallax_strip_02.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "60,240,1417,416",
+    "area": 213970
+  },
+  {
+    "file": "01_sky_distant/sky_parallax_strip_03.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "60,430,1419,594",
+    "area": 194750
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_01.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "46,607,401,734",
+    "area": 21497
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_02.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "438,618,735,728",
+    "area": 15006
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_03.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "770,640,977,714",
+    "area": 7422
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_04.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1022,653,1186,712",
+    "area": 4674
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_05.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1226,656,1341,704",
+    "area": 2586
+  },
+  {
+    "file": "01_sky_distant/cloud_cluster_06.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1359,675,1437,704",
+    "area": 1173
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_01.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "408,767,745,832",
+    "area": 13236
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_02.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "51,769,377,824",
+    "area": 11060
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_03.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "771,770,1107,835",
+    "area": 12472
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_04.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1125,772,1441,835",
+    "area": 12097
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_05.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "408,845,745,916",
+    "area": 12923
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_06.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "50,851,372,899",
+    "area": 8470
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_07.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "784,860,1113,907",
+    "area": 10250
+  },
+  {
+    "file": "01_sky_distant/mist_haze_strip_08.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1155,868,1425,903",
+    "area": 4532
+  },
+  {
+    "file": "01_sky_distant/mountain_range_strip_01.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "1119,943,1449,995",
+    "area": 9588
+  },
+  {
+    "file": "01_sky_distant/mountain_range_strip_02.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "50,951,731,1006",
+    "area": 18889
+  },
+  {
+    "file": "01_sky_distant/mountain_range_strip_03.png",
+    "folder": "01_sky_distant",
+    "sheet": "a_large_sprite_sheet_assets_sheet_style_image_on_1_batch_1.png",
+    "bbox": "750,957,1091,1004",
+    "area": 8471
+  },
+  {
+    "file": "02_distant_architecture/distant_architecture_strip_01.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "178,18,1391,165",
+    "area": 80059
+  },
+  {
+    "file": "02_distant_architecture/distant_architecture_strip_02.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "104,172,1415,305",
+    "area": 79329
+  },
+  {
+    "file": "02_distant_architecture/distant_architecture_strip_03.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "96,314,1389,442",
+    "area": 72941
+  },
+  {
+    "file": "02_distant_architecture/distant_architecture_strip_04.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "58,446,1401,587",
+    "area": 84116
+  },
+  {
+    "file": "02_distant_architecture/distant_architecture_strip_05.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "93,595,1402,729",
+    "area": 78389
+  },
+  {
+    "file": "02_distant_architecture/distant_ruin_cluster_01.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "420,753,711,980",
+    "area": 35987
+  },
+  {
+    "file": "02_distant_architecture/distant_ruin_cluster_02.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "754,772,1059,981",
+    "area": 38444
+  },
+  {
+    "file": "02_distant_architecture/distant_ruin_cluster_03.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "1092,783,1440,982",
+    "area": 42393
+  },
+  {
+    "file": "02_distant_architecture/distant_ruin_cluster_04.png",
+    "folder": "02_distant_architecture",
+    "sheet": "a_wide_image_of_a_compilation_spritesheet_style_sc_2_batch_2.png",
+    "bbox": "45,787,375,979",
+    "area": 37273
+  },
+  {
+    "file": "03_midground_ruins/arch_ruin_01.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "741,29,1028,292",
+    "area": 37699
+  },
+  {
+    "file": "03_midground_ruins/arch_ruin_02.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "1077,29,1428,292",
+    "area": 43838
+  },
+  {
+    "file": "03_midground_ruins/arch_ruin_03.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "40,40,379,290",
+    "area": 38306
+  },
+  {
+    "file": "03_midground_ruins/arch_ruin_04.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "403,40,700,292",
+    "area": 36143
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_01.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "59,339,197,518",
+    "area": 13763
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_02.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "229,341,366,517",
+    "area": 13864
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_03.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "402,342,533,517",
+    "area": 13068
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_04.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "575,344,684,517",
+    "area": 11418
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_05.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "1019,346,1426,630",
+    "area": 62897
+  },
+  {
+    "file": "03_midground_ruins/standing_stone_06.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "872,348,985,517",
+    "area": 12935
+  },
+  {
+    "file": "03_midground_ruins/resonance_altar_01.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "712,350,829,514",
+    "area": 11067
+  },
+  {
+    "file": "03_midground_ruins/sanctuary_ruin_cluster_01.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "386,549,681,782",
+    "area": 39817
+  },
+  {
+    "file": "03_midground_ruins/sanctuary_ruin_cluster_02.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "42,553,340,788",
+    "area": 43852
+  },
+  {
+    "file": "03_midground_ruins/sanctuary_ruin_cluster_03.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "714,558,1194,783",
+    "area": 57259
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_01.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "1153,811,1434,932",
+    "area": 21647
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_02.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "65,837,310,906",
+    "area": 13781
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_03.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "394,842,706,906",
+    "area": 16198
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_04.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "789,848,1072,1013",
+    "area": 31027
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_05.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "61,947,310,1013",
+    "area": 12370
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_06.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "401,947,701,1015",
+    "area": 16115
+  },
+  {
+    "file": "03_midground_ruins/stone_platform_07.png",
+    "folder": "03_midground_ruins",
+    "sheet": "a_clean_high_resolution_game_asset_sheet_sprite_3_batch_3.png",
+    "bbox": "1169,949,1429,1013",
+    "area": 13839
+  },
+  {
+    "file": "04_midground_nature/tree_medium_01.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "764,43,1052,354",
+    "area": 48728
+  },
+  {
+    "file": "04_midground_nature/tree_medium_02.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "60,47,360,357",
+    "area": 53805
+  },
+  {
+    "file": "04_midground_nature/tree_medium_03.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1151,61,1427,357",
+    "area": 42316
+  },
+  {
+    "file": "04_midground_nature/tree_medium_04.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "423,68,693,354",
+    "area": 47690
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_01.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1194,410,1319,519",
+    "area": 9176
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_02.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "792,411,914,520",
+    "area": 6844
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_03.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "37,413,175,522",
+    "area": 10549
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_04.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "638,413,768,518",
+    "area": 9080
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_05.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "201,415,309,524",
+    "area": 6359
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_06.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "338,415,472,518",
+    "area": 8285
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_07.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "930,417,1029,520",
+    "area": 6579
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_08.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "496,420,612,520",
+    "area": 6837
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_09.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1338,420,1458,517",
+    "area": 7683
+  },
+  {
+    "file": "04_midground_nature/bush_cluster_10.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1052,421,1173,520",
+    "area": 8555
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_01.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "597,576,713,750",
+    "area": 8080
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_02.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1152,588,1257,750",
+    "area": 9590
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_03.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "968,590,1074,744",
+    "area": 6310
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_04.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "56,593,210,754",
+    "area": 14301
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_05.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1322,594,1417,753",
+    "area": 8297
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_06.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "777,608,898,749",
+    "area": 10274
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_07.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "264,610,366,749",
+    "area": 5769
+  },
+  {
+    "file": "04_midground_nature/scenery_prop_08.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "446,614,545,744",
+    "area": 7138
+  },
+  {
+    "file": "04_midground_nature/forest_edge_strip_01.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "42,805,382,993",
+    "area": 51409
+  },
+  {
+    "file": "04_midground_nature/forest_edge_strip_02.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "754,807,1088,997",
+    "area": 44860
+  },
+  {
+    "file": "04_midground_nature/forest_edge_strip_03.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "409,809,718,993",
+    "area": 41065
+  },
+  {
+    "file": "04_midground_nature/forest_edge_strip_04.png",
+    "folder": "04_midground_nature",
+    "sheet": "a_clean_high_resolution_game_asset_sprite_sheet_o_4_batch_4.png",
+    "bbox": "1127,810,1458,992",
+    "area": 45244
+  },
+  {
+    "file": "05_foreground/rock_cluster_01.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "262,35,458,168",
+    "area": 15405
+  },
+  {
+    "file": "05_foreground/rock_cluster_02.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "48,40,236,163",
+    "area": 14362
+  },
+  {
+    "file": "05_foreground/rock_cluster_03.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "730,44,936,164",
+    "area": 15214
+  },
+  {
+    "file": "05_foreground/rock_cluster_04.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "496,47,693,164",
+    "area": 14720
+  },
+  {
+    "file": "05_foreground/rock_cluster_05.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1225,50,1443,165",
+    "area": 15314
+  },
+  {
+    "file": "05_foreground/rock_cluster_06.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "974,62,1194,163",
+    "area": 14563
+  },
+  {
+    "file": "05_foreground/rock_cluster_07.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "51,197,252,314",
+    "area": 14842
+  },
+  {
+    "file": "05_foreground/rock_cluster_08.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "508,198,700,316",
+    "area": 15751
+  },
+  {
+    "file": "05_foreground/rock_cluster_09.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "749,198,943,316",
+    "area": 12388
+  },
+  {
+    "file": "05_foreground/rock_cluster_10.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "978,206,1178,314",
+    "area": 13226
+  },
+  {
+    "file": "05_foreground/rock_cluster_11.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1216,216,1438,315",
+    "area": 13961
+  },
+  {
+    "file": "05_foreground/rock_cluster_12.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "293,222,468,316",
+    "area": 9754
+  },
+  {
+    "file": "05_foreground/root_log_cluster_01.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "865,336,1136,475",
+    "area": 17578
+  },
+  {
+    "file": "05_foreground/root_log_cluster_02.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "23,341,349,474",
+    "area": 23103
+  },
+  {
+    "file": "05_foreground/root_log_cluster_03.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "361,349,602,477",
+    "area": 15056
+  },
+  {
+    "file": "05_foreground/root_log_cluster_04.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "623,357,856,470",
+    "area": 13584
+  },
+  {
+    "file": "05_foreground/root_log_cluster_05.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1152,380,1452,478",
+    "area": 16504
+  },
+  {
+    "file": "05_foreground/stump_or_log_01.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "264,493,428,605",
+    "area": 9430
+  },
+  {
+    "file": "05_foreground/stump_or_log_02.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "509,507,692,602",
+    "area": 9908
+  },
+  {
+    "file": "05_foreground/stump_or_log_03.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "810,509,960,606",
+    "area": 9261
+  },
+  {
+    "file": "05_foreground/stump_or_log_04.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1032,520,1167,601",
+    "area": 6318
+  },
+  {
+    "file": "05_foreground/ground_platform_01.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "23,630,279,716",
+    "area": 13508
+  },
+  {
+    "file": "05_foreground/ground_platform_02.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "676,632,965,724",
+    "area": 17127
+  },
+  {
+    "file": "05_foreground/ground_platform_03.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1011,634,1469,779",
+    "area": 29868
+  },
+  {
+    "file": "05_foreground/ground_platform_04.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "302,641,627,713",
+    "area": 17283
+  },
+  {
+    "file": "05_foreground/ground_platform_05.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "79,740,341,824",
+    "area": 14552
+  },
+  {
+    "file": "05_foreground/ground_platform_06.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "789,747,1100,824",
+    "area": 15147
+  },
+  {
+    "file": "05_foreground/ground_platform_07.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "427,749,739,831",
+    "area": 17506
+  },
+  {
+    "file": "05_foreground/foreground_frame_01.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "1139,840,1452,1027",
+    "area": 29800
+  },
+  {
+    "file": "05_foreground/foreground_frame_02.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "604,851,846,1028",
+    "area": 23532
+  },
+  {
+    "file": "05_foreground/foreground_frame_03.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "316,854,571,1025",
+    "area": 25141
+  },
+  {
+    "file": "05_foreground/foreground_frame_04.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "33,857,289,1025",
+    "area": 24987
+  },
+  {
+    "file": "05_foreground/foreground_frame_05.png",
+    "folder": "05_foreground",
+    "sheet": "a_clean_game_asset_sprite_sheet_tileset_style_im_5_batch_5.png",
+    "bbox": "884,867,1106,1024",
+    "area": 25634
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_01.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "492,40,603,138",
+    "area": 4970
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_02.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "187,41,311,133",
+    "area": 5638
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_03.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1075,42,1187,139",
+    "area": 5210
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_04.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1348,44,1451,139",
+    "area": 4212
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_05.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "931,45,1050,135",
+    "area": 5614
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_06.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "792,47,900,133",
+    "area": 5172
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_07.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1217,50,1319,142",
+    "area": 4568
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_08.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "31,51,156,142",
+    "area": 5186
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_09.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "346,52,454,132",
+    "area": 4473
+  },
+  {
+    "file": "06_atmosphere/grass_tuft_10.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "639,52,763,132",
+    "area": 5837
+  },
+  {
+    "file": "06_atmosphere/flower_patch_01.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "336,162,457,280",
+    "area": 6579
+  },
+  {
+    "file": "06_atmosphere/flower_patch_02.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1338,164,1455,286",
+    "area": 8118
+  },
+  {
+    "file": "06_atmosphere/flower_patch_03.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "780,166,915,279",
+    "area": 7835
+  },
+  {
+    "file": "06_atmosphere/flower_patch_04.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "484,167,598,285",
+    "area": 6048
+  },
+  {
+    "file": "06_atmosphere/flower_patch_05.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "35,170,149,282",
+    "area": 6182
+  },
+  {
+    "file": "06_atmosphere/flower_patch_06.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1088,171,1190,281",
+    "area": 5630
+  },
+  {
+    "file": "06_atmosphere/flower_patch_07.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "944,172,1059,286",
+    "area": 6252
+  },
+  {
+    "file": "06_atmosphere/flower_patch_08.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1215,172,1313,280",
+    "area": 5328
+  },
+  {
+    "file": "06_atmosphere/flower_patch_09.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "186,173,305,284",
+    "area": 6603
+  },
+  {
+    "file": "06_atmosphere/flower_patch_10.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "630,189,744,281",
+    "area": 5243
+  },
+  {
+    "file": "06_atmosphere/light_ray_01.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "29,302,162,429",
+    "area": 10191
+  },
+  {
+    "file": "06_atmosphere/light_ray_02.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "666,302,784,429",
+    "area": 8376
+  },
+  {
+    "file": "06_atmosphere/light_ray_03.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1372,302,1457,437",
+    "area": 5298
+  },
+  {
+    "file": "06_atmosphere/light_ray_04.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "197,303,311,430",
+    "area": 9595
+  },
+  {
+    "file": "06_atmosphere/light_ray_05.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "361,303,483,429",
+    "area": 10146
+  },
+  {
+    "file": "06_atmosphere/light_ray_06.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "961,303,1060,430",
+    "area": 8159
+  },
+  {
+    "file": "06_atmosphere/light_ray_07.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "817,305,917,429",
+    "area": 7497
+  },
+  {
+    "file": "06_atmosphere/light_ray_08.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1232,305,1340,430",
+    "area": 7843
+  },
+  {
+    "file": "06_atmosphere/light_ray_09.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "530,307,630,438",
+    "area": 8720
+  },
+  {
+    "file": "06_atmosphere/light_ray_10.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1111,307,1209,442",
+    "area": 7626
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_01.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1217,456,1358,673",
+    "area": 16829
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_02.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "40,457,147,547",
+    "area": 6132
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_03.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1345,461,1450,560",
+    "area": 7689
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_04.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "478,463,600,552",
+    "area": 7092
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_05.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "203,474,291,550",
+    "area": 2349
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_06.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1115,475,1165,542",
+    "area": 1513
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_07.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "657,482,709,534",
+    "area": 804
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_08.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "808,542,917,660",
+    "area": 6943
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_09.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "366,551,475,665",
+    "area": 7728
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_10.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1023,553,1136,673",
+    "area": 8053
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_11.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "202,556,302,659",
+    "area": 6982
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_12.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "587,560,701,660",
+    "area": 6716
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_13.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "58,567,151,656",
+    "area": 4876
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_14.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "23,668,270,722",
+    "area": 7093
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_15.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "789,669,988,725",
+    "area": 5841
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_16.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1236,669,1465,726",
+    "area": 6455
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_17.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "285,670,529,723",
+    "area": 6698
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_18.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "544,674,759,722",
+    "area": 5553
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_19.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1009,680,1219,726",
+    "area": 5342
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_20.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1254,859,1447,1029",
+    "area": 14675
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_21.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "58,862,115,903",
+    "area": 1199
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_22.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "227,862,273,900",
+    "area": 1084
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_23.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "390,862,439,899",
+    "area": 1116
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_24.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "716,862,758,899",
+    "area": 1007
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_25.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "867,862,910,903",
+    "area": 852
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_26.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "547,863,593,898",
+    "area": 1017
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_27.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1044,863,1083,899",
+    "area": 776
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_28.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "1163,864,1210,895",
+    "area": 696
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_29.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "915,923,1219,1025",
+    "area": 17546
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_30.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "320,930,483,1027",
+    "area": 7663
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_31.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "40,932,281,1030",
+    "area": 14691
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_32.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "743,935,879,1017",
+    "area": 4188
+  },
+  {
+    "file": "06_atmosphere/atmos_effect_33.png",
+    "folder": "06_atmosphere",
+    "sheet": "a_top_down_view_of_a_large_sprite_sheet_asset_sh_6_batch_6.png",
+    "bbox": "521,953,711,1032",
+    "area": 6750
+  }
+]

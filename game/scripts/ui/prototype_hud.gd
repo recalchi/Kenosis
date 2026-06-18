@@ -9,7 +9,8 @@ signal dialogue_closed
 
 var points_label: Label
 var health_label: Label
-var health_bar: ProgressBar
+var health_hearts: HBoxContainer
+var health_heart_nodes: Array[TextureRect] = []
 var stealth_label: Label
 var resonance_label: Label
 var resonance_bar: ProgressBar
@@ -20,6 +21,9 @@ var prompt_panel: PanelContainer
 var objective_panel: PanelContainer
 var objective_step_label: Label
 var objective_text: Label
+var current_location_label: Label
+var navigation_detail_label: Label
+var objective_points_label: Label
 var points_purpose_label: Label
 var message_label: Label
 var opening_label: Label
@@ -28,25 +32,40 @@ var message_panel: PanelContainer
 var pause_overlay: PanelContainer
 var death_overlay: PanelContainer
 var completion_overlay: PanelContainer
-var dialogue_overlay: PanelContainer
+var dialogue_overlay: Control
+var dialogue_visual_root: Control
 var dialogue_title: Label
 var dialogue_speaker: Label
 var dialogue_body: Label
 var dialogue_counter: Label
 var dialogue_hint: Label
+var dialogue_next_marker: TextureRect
 var completion_body: Label
 var _dialogue_lines: Array[String] = []
 var _dialogue_index := 0
 var _dialogue_line_text := ""
 var _dialogue_character_elapsed := 0.0
 var _dialogue_typing := false
+var _dialogue_closing := false
+var _dialogue_close_elapsed := 0.0
+var _dialogue_close_frames := 0
 var _dialogue_previous_paused := false
 var _dialogue_last_tick_character := 0
+var _dialogue_transition_tween: Tween
 var _message_text := ""
 var _message_elapsed := 0.0
 var _message_hold_seconds := 0.0
 var _opening_text := "CAMPO DE TESTES\nAmbiente de validacao. A historia principal permanece indisponivel."
 var _opening_elapsed := 0.0
+
+const DEFAULT_HEART_COUNT := 3
+const HEART_TEXTURE_PATH := "res://assets/ui/gameplay/icons/32x32/icone_vida_32x32.png"
+const DIALOGUE_FRAME_TEXTURE_PATH := "res://assets/ui/dialogue/caixa_dialogo_grande_com_slot_retrato_e_tag_vazios_416x123_2x_832x246.png"
+const DIALOGUE_NEXT_MARKER_TEXTURE_PATH := "res://assets/ui/dialogue/icone_marcador_proxima_pagina_20x19_2x_40x38.png"
+const DIALOGUE_NATIVE_SIZE := Vector2(832, 246)
+const DIALOGUE_OPEN_OFFSET_Y := 28.0
+const DIALOGUE_OPEN_DURATION := 0.22
+const DIALOGUE_CLOSE_DURATION := 0.18
 
 
 func _ready() -> void:
@@ -85,6 +104,7 @@ func _process(delta: float) -> void:
 	_update_opening_text(delta)
 	_update_message_text(delta)
 	_update_dialogue_text(delta)
+	_update_dialogue_transition(delta)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -98,6 +118,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func set_points(points: int) -> void:
 	points_label.text = "%03d" % points
+	if objective_points_label != null:
+		objective_points_label.text = "%03d MEMORIAS" % points
 	if points_purpose_label != null:
 		if points < 20:
 			points_purpose_label.text = "Poucas memorias: evite falhas."
@@ -117,10 +139,23 @@ func set_objective(step: String, description: String) -> void:
 		objective_text.text = description
 
 
+func set_navigation(location_name: String, detail: String) -> void:
+	if current_location_label != null:
+		current_location_label.text = location_name
+	if navigation_detail_label != null:
+		navigation_detail_label.text = detail
+
+
 func set_health(health: int, max_health: int) -> void:
-	health_label.text = "INTEGRIDADE  %d / %d" % [health, max_health]
-	health_bar.max_value = max_health
-	health_bar.value = health
+	health_label.text = "VIDA  %d / %d" % [health, max_health]
+	_ensure_health_heart_count(max_health)
+	for index in health_heart_nodes.size():
+		var heart := health_heart_nodes[index]
+		heart.modulate = (
+			Color.WHITE
+			if index < health
+			else Color(0.30, 0.22, 0.24, 0.32)
+		)
 
 
 func set_stealth(hidden: bool, cover_available: bool, crouching: bool) -> void:
@@ -229,6 +264,8 @@ func is_completion_visible() -> bool:
 func show_dialogue(title: String, lines: Array[String]) -> void:
 	if lines.is_empty():
 		return
+	_kill_dialogue_transition()
+	_dialogue_closing = false
 	_dialogue_lines = lines.duplicate()
 	_dialogue_index = 0
 	dialogue_speaker.text = title
@@ -240,6 +277,7 @@ func show_dialogue(title: String, lines: Array[String]) -> void:
 	_dialogue_previous_paused = get_tree().paused
 	get_tree().paused = true
 	_show_dialogue_line()
+	_play_dialogue_open_transition()
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null:
 		audio.play_ui("dialogue_open")
@@ -260,26 +298,26 @@ func show_dialogue_id(dialogue_id: StringName) -> void:
 
 
 func advance_dialogue() -> void:
+	if _dialogue_closing:
+		return
 	_dialogue_index += 1
 	if _dialogue_index < _dialogue_lines.size():
 		_show_dialogue_line()
 		return
-	dialogue_overlay.visible = false
-	_dialogue_typing = false
-	prompt_panel.visible = not prompt_label.text.is_empty()
-	get_tree().paused = _dialogue_previous_paused
-	dialogue_closed.emit()
+	_begin_dialogue_close_transition()
 	var audio := get_node_or_null("/root/AudioManager")
 	if audio != null:
 		audio.play_ui("dialogue_close")
 
 
 func complete_dialogue_line() -> void:
-	if not _dialogue_typing:
+	if not _dialogue_typing or _dialogue_closing:
 		return
 	_dialogue_typing = false
 	dialogue_body.visible_characters = -1
 	dialogue_hint.text = "E  continuar"
+	if dialogue_next_marker != null:
+		dialogue_next_marker.visible = true
 
 
 func _show_dialogue_line() -> void:
@@ -288,6 +326,8 @@ func _show_dialogue_line() -> void:
 	dialogue_body.visible_characters = 0
 	dialogue_counter.text = "%d / %d" % [_dialogue_index + 1, _dialogue_lines.size()]
 	dialogue_hint.text = "E  completar"
+	if dialogue_next_marker != null:
+		dialogue_next_marker.visible = false
 	_dialogue_character_elapsed = 0.0
 	_dialogue_last_tick_character = 0
 	_dialogue_typing = true
@@ -364,19 +404,26 @@ func _build_status_hud() -> void:
 	resonance_bar.add_theme_stylebox_override("fill", _bar_style(Color(0.12, 0.72, 0.73, 1.0), Color(0.55, 1.0, 0.96, 1.0)))
 	stack.add_child(resonance_bar)
 
+	var health_row := HBoxContainer.new()
+	health_row.name = "HealthRow"
+	health_row.add_theme_constant_override("separation", 8)
+	stack.add_child(health_row)
+
 	health_label = Label.new()
 	health_label.name = "HealthLabel"
+	health_label.text = "VIDA  3 / 3"
+	health_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	health_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	health_label.add_theme_font_size_override("font_size", 12)
 	health_label.add_theme_color_override("font_color", Color(0.95, 0.54, 0.48, 1.0))
-	stack.add_child(health_label)
+	health_row.add_child(health_label)
 
-	health_bar = ProgressBar.new()
-	health_bar.name = "HealthBar"
-	health_bar.show_percentage = false
-	health_bar.custom_minimum_size = Vector2(170, 11)
-	health_bar.add_theme_stylebox_override("background", _bar_style(Color(0.08, 0.04, 0.04, 1.0), Color(0.34, 0.18, 0.17, 1.0)))
-	health_bar.add_theme_stylebox_override("fill", _bar_style(Color(0.78, 0.18, 0.16, 1.0), Color(1.0, 0.52, 0.40, 1.0)))
-	stack.add_child(health_bar)
+	health_hearts = HBoxContainer.new()
+	health_hearts.name = "HealthHearts"
+	health_hearts.alignment = BoxContainer.ALIGNMENT_END
+	health_hearts.add_theme_constant_override("separation", 3)
+	health_row.add_child(health_hearts)
+	_ensure_health_heart_count(DEFAULT_HEART_COUNT)
 
 	stealth_label = Label.new()
 	stealth_label.name = "StealthLabel"
@@ -414,7 +461,7 @@ func _build_objective_panel() -> void:
 	objective_panel.anchor_left = 0.70
 	objective_panel.anchor_top = 0.028
 	objective_panel.anchor_right = 0.978
-	objective_panel.anchor_bottom = 0.148
+	objective_panel.anchor_bottom = 0.218
 	objective_panel.add_theme_stylebox_override("panel", _panel_style(Color(0.018, 0.028, 0.038, 0.84), Color(0.35, 0.78, 0.78, 0.92)))
 	add_child(objective_panel)
 
@@ -429,12 +476,25 @@ func _build_objective_panel() -> void:
 	stack.add_theme_constant_override("separation", 3)
 	margin.add_child(stack)
 
+	var header := HBoxContainer.new()
+	header.add_theme_constant_override("separation", 10)
+	stack.add_child(header)
+
+	var panel_title := Label.new()
+	panel_title.name = "MissionNavigationTitle"
+	panel_title.text = "MISSAO E LOCALIZACAO"
+	panel_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	panel_title.add_theme_font_size_override("font_size", 12)
+	panel_title.add_theme_color_override("font_color", Color(0.47, 0.95, 0.93, 1.0))
+	header.add_child(panel_title)
+
 	objective_step_label = Label.new()
 	objective_step_label.name = "ObjectiveStepLabel"
 	objective_step_label.text = "1 / 6"
+	objective_step_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	objective_step_label.add_theme_font_size_override("font_size", 12)
-	objective_step_label.add_theme_color_override("font_color", Color(0.47, 0.95, 0.93, 1.0))
-	stack.add_child(objective_step_label)
+	objective_step_label.add_theme_color_override("font_color", Color(0.93, 0.77, 0.38, 1.0))
+	header.add_child(objective_step_label)
 
 	objective_text = Label.new()
 	objective_text.name = "ObjectiveText"
@@ -443,6 +503,47 @@ func _build_objective_panel() -> void:
 	objective_text.add_theme_font_size_override("font_size", 14)
 	objective_text.add_theme_color_override("font_color", Color(0.91, 0.87, 0.72, 1.0))
 	stack.add_child(objective_text)
+
+	var separator := HSeparator.new()
+	stack.add_child(separator)
+
+	var navigation_row := HBoxContainer.new()
+	navigation_row.add_theme_constant_override("separation", 10)
+	stack.add_child(navigation_row)
+
+	var location_icon := TextureRect.new()
+	location_icon.texture = load("res://assets/ui/reference/map_checkpoint_marker.png")
+	location_icon.custom_minimum_size = Vector2(34, 34)
+	location_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	location_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	navigation_row.add_child(location_icon)
+
+	var navigation_stack := VBoxContainer.new()
+	navigation_stack.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	navigation_row.add_child(navigation_stack)
+
+	current_location_label = Label.new()
+	current_location_label.name = "CurrentLocationLabel"
+	current_location_label.text = "Campo de Testes"
+	current_location_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	current_location_label.add_theme_font_size_override("font_size", 13)
+	current_location_label.add_theme_color_override("font_color", Color(0.78, 0.94, 0.91, 1.0))
+	navigation_stack.add_child(current_location_label)
+
+	navigation_detail_label = Label.new()
+	navigation_detail_label.name = "NavigationDetailLabel"
+	navigation_detail_label.text = "Mapa ainda nao sincronizado"
+	navigation_detail_label.add_theme_font_size_override("font_size", 10)
+	navigation_detail_label.add_theme_color_override("font_color", Color(0.70, 0.74, 0.66, 0.95))
+	navigation_stack.add_child(navigation_detail_label)
+
+	objective_points_label = Label.new()
+	objective_points_label.name = "ObjectivePointsLabel"
+	objective_points_label.text = "100 MEMORIAS"
+	objective_points_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	objective_points_label.add_theme_font_size_override("font_size", 11)
+	objective_points_label.add_theme_color_override("font_color", Color(0.94, 0.81, 0.46, 1.0))
+	navigation_row.add_child(objective_points_label)
 
 
 func _build_prompt() -> void:
@@ -582,74 +683,188 @@ func _build_completion_overlay() -> void:
 
 
 func _build_dialogue_overlay() -> void:
-	dialogue_overlay = PanelContainer.new()
+	dialogue_overlay = Control.new()
 	dialogue_overlay.name = "DialogueOverlay"
 	dialogue_overlay.visible = false
 	dialogue_overlay.process_mode = Node.PROCESS_MODE_ALWAYS
-	dialogue_overlay.anchor_left = 0.10
-	dialogue_overlay.anchor_top = 0.64
-	dialogue_overlay.anchor_right = 0.90
-	dialogue_overlay.anchor_bottom = 0.94
-	dialogue_overlay.add_theme_stylebox_override("panel", _panel_style(Color(0.015, 0.025, 0.035, 0.97), Color(0.38, 0.82, 0.86, 1.0)))
+	dialogue_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dialogue_overlay.anchor_left = 0.5
+	dialogue_overlay.anchor_top = 1.0
+	dialogue_overlay.anchor_right = 0.5
+	dialogue_overlay.anchor_bottom = 1.0
+	dialogue_overlay.offset_left = -DIALOGUE_NATIVE_SIZE.x * 0.5
+	dialogue_overlay.offset_top = -DIALOGUE_NATIVE_SIZE.y - 32.0
+	dialogue_overlay.offset_right = DIALOGUE_NATIVE_SIZE.x * 0.5
+	dialogue_overlay.offset_bottom = -32.0
 	add_child(dialogue_overlay)
+
+	dialogue_visual_root = Control.new()
+	dialogue_visual_root.name = "DialogueVisualRoot"
+	dialogue_visual_root.anchor_right = 1.0
+	dialogue_visual_root.anchor_bottom = 1.0
+	dialogue_visual_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dialogue_overlay.add_child(dialogue_visual_root)
 
 	var frame := NinePatchRect.new()
 	frame.name = "DialogueFrame"
-	frame.texture = load("res://assets/ui/reference/dialogue_frame.png")
+	frame.texture = _load_ui_texture(DIALOGUE_FRAME_TEXTURE_PATH)
+	frame.set_meta("asset_path", DIALOGUE_FRAME_TEXTURE_PATH)
 	frame.anchor_right = 1.0
 	frame.anchor_bottom = 1.0
 	frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	frame.draw_center = false
-	frame.set_patch_margin(SIDE_LEFT, 18)
-	frame.set_patch_margin(SIDE_TOP, 18)
-	frame.set_patch_margin(SIDE_RIGHT, 18)
-	frame.set_patch_margin(SIDE_BOTTOM, 18)
-	dialogue_overlay.add_child(frame)
-
-	var margin := MarginContainer.new()
-	margin.add_theme_constant_override("margin_left", 34)
-	margin.add_theme_constant_override("margin_top", 24)
-	margin.add_theme_constant_override("margin_right", 34)
-	margin.add_theme_constant_override("margin_bottom", 20)
-	dialogue_overlay.add_child(margin)
-
-	var stack := VBoxContainer.new()
-	stack.add_theme_constant_override("separation", 8)
-	margin.add_child(stack)
+	frame.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	frame.draw_center = true
+	frame.set_patch_margin(SIDE_LEFT, 44)
+	frame.set_patch_margin(SIDE_TOP, 36)
+	frame.set_patch_margin(SIDE_RIGHT, 44)
+	frame.set_patch_margin(SIDE_BOTTOM, 36)
+	dialogue_visual_root.add_child(frame)
 
 	dialogue_speaker = Label.new()
 	dialogue_speaker.name = "DialogueSpeaker"
-	dialogue_speaker.add_theme_font_size_override("font_size", 20)
-	dialogue_speaker.add_theme_color_override("font_color", Color(0.48, 0.94, 0.94, 1.0))
-	stack.add_child(dialogue_speaker)
+	dialogue_speaker.offset_left = 218
+	dialogue_speaker.offset_top = 50
+	dialogue_speaker.offset_right = 440
+	dialogue_speaker.offset_bottom = 78
+	dialogue_speaker.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	dialogue_speaker.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	dialogue_speaker.add_theme_font_size_override("font_size", 17)
+	dialogue_speaker.add_theme_color_override("font_color", Color(0.94, 0.78, 0.46, 1.0))
+	dialogue_visual_root.add_child(dialogue_speaker)
 	dialogue_title = dialogue_speaker
 
 	dialogue_body = Label.new()
 	dialogue_body.name = "DialogueBody"
+	dialogue_body.offset_left = 214
+	dialogue_body.offset_top = 98
+	dialogue_body.offset_right = 772
+	dialogue_body.offset_bottom = 190
 	dialogue_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	dialogue_body.add_theme_font_size_override("font_size", 16)
-	dialogue_body.add_theme_color_override("font_color", Color(0.89, 0.87, 0.76, 1.0))
+	dialogue_body.add_theme_color_override("font_color", Color(0.14, 0.105, 0.075, 1.0))
 	dialogue_body.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	stack.add_child(dialogue_body)
-
-	var footer := HBoxContainer.new()
-	footer.alignment = BoxContainer.ALIGNMENT_END
-	stack.add_child(footer)
+	dialogue_visual_root.add_child(dialogue_body)
 
 	dialogue_counter = Label.new()
 	dialogue_counter.name = "DialogueCounter"
-	dialogue_counter.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	dialogue_counter.offset_left = 214
+	dialogue_counter.offset_top = 188
+	dialogue_counter.offset_right = 336
+	dialogue_counter.offset_bottom = 210
 	dialogue_counter.add_theme_font_size_override("font_size", 12)
-	dialogue_counter.add_theme_color_override("font_color", Color(0.66, 0.72, 0.67, 1.0))
-	footer.add_child(dialogue_counter)
+	dialogue_counter.add_theme_color_override("font_color", Color(0.39, 0.30, 0.20, 0.92))
+	dialogue_visual_root.add_child(dialogue_counter)
 
 	dialogue_hint = Label.new()
 	dialogue_hint.name = "DialogueHint"
 	dialogue_hint.text = "E  continuar"
+	dialogue_hint.offset_left = 580
+	dialogue_hint.offset_top = 186
+	dialogue_hint.offset_right = 760
+	dialogue_hint.offset_bottom = 210
 	dialogue_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	dialogue_hint.add_theme_font_size_override("font_size", 13)
-	dialogue_hint.add_theme_color_override("font_color", Color(0.62, 0.82, 0.80, 1.0))
-	footer.add_child(dialogue_hint)
+	dialogue_hint.add_theme_color_override("font_color", Color(0.34, 0.25, 0.16, 0.92))
+	dialogue_visual_root.add_child(dialogue_hint)
+
+	dialogue_next_marker = TextureRect.new()
+	dialogue_next_marker.name = "DialogueNextMarker"
+	dialogue_next_marker.texture = _load_ui_texture(DIALOGUE_NEXT_MARKER_TEXTURE_PATH)
+	dialogue_next_marker.offset_left = 770
+	dialogue_next_marker.offset_top = 182
+	dialogue_next_marker.offset_right = 810
+	dialogue_next_marker.offset_bottom = 220
+	dialogue_next_marker.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	dialogue_next_marker.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	dialogue_next_marker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dialogue_next_marker.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	dialogue_next_marker.visible = false
+	dialogue_visual_root.add_child(dialogue_next_marker)
+
+
+func _load_ui_texture(texture_path: String) -> Texture2D:
+	var imported_texture := load(texture_path) as Texture2D
+	if imported_texture != null:
+		return imported_texture
+
+	var image := Image.new()
+	var error := image.load(texture_path)
+	if error != OK:
+		push_warning("UI texture could not be loaded: %s" % texture_path)
+		return null
+	return ImageTexture.create_from_image(image)
+
+
+func _play_dialogue_open_transition() -> void:
+	if dialogue_visual_root == null:
+		return
+	dialogue_visual_root.pivot_offset = dialogue_visual_root.size * Vector2(0.5, 1.0)
+	dialogue_visual_root.position.y = DIALOGUE_OPEN_OFFSET_Y
+	dialogue_visual_root.scale = Vector2(0.985, 0.96)
+	dialogue_visual_root.modulate.a = 0.0
+	_dialogue_transition_tween = create_tween()
+	_dialogue_transition_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_dialogue_transition_tween.set_parallel(true)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "position:y", 0.0, DIALOGUE_OPEN_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "scale", Vector2.ONE, DIALOGUE_OPEN_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "modulate:a", 1.0, DIALOGUE_OPEN_DURATION * 0.85).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+func _begin_dialogue_close_transition() -> void:
+	if _dialogue_closing:
+		return
+	_dialogue_closing = true
+	_dialogue_typing = false
+	_dialogue_close_elapsed = 0.0
+	_dialogue_close_frames = 0
+	get_tree().paused = _dialogue_previous_paused
+	if dialogue_next_marker != null:
+		dialogue_next_marker.visible = false
+	_kill_dialogue_transition()
+	if dialogue_visual_root == null:
+		_finish_dialogue_close()
+		return
+	dialogue_visual_root.pivot_offset = dialogue_visual_root.size * Vector2(0.5, 1.0)
+	_dialogue_transition_tween = create_tween()
+	_dialogue_transition_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_dialogue_transition_tween.set_parallel(true)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "position:y", DIALOGUE_OPEN_OFFSET_Y, DIALOGUE_CLOSE_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "scale", Vector2(0.99, 0.965), DIALOGUE_CLOSE_DURATION).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	_dialogue_transition_tween.tween_property(dialogue_visual_root, "modulate:a", 0.0, DIALOGUE_CLOSE_DURATION).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	_dialogue_transition_tween.chain().tween_callback(_finish_dialogue_close)
+
+
+func _update_dialogue_transition(delta: float) -> void:
+	if not _dialogue_closing:
+		return
+	_dialogue_close_elapsed += delta
+	_dialogue_close_frames += 1
+	if _dialogue_close_elapsed >= DIALOGUE_CLOSE_DURATION + 0.05 or _dialogue_close_frames >= 16:
+		_finish_dialogue_close()
+
+
+func _finish_dialogue_close() -> void:
+	if not _dialogue_closing and dialogue_overlay != null and not dialogue_overlay.visible:
+		return
+	_kill_dialogue_transition()
+	if dialogue_overlay != null:
+		dialogue_overlay.visible = false
+	if dialogue_visual_root != null:
+		dialogue_visual_root.position.y = 0.0
+		dialogue_visual_root.scale = Vector2.ONE
+		dialogue_visual_root.modulate.a = 1.0
+	_dialogue_closing = false
+	_dialogue_close_elapsed = 0.0
+	_dialogue_close_frames = 0
+	prompt_panel.visible = not prompt_label.text.is_empty()
+	get_tree().paused = _dialogue_previous_paused
+	dialogue_closed.emit()
+
+
+func _kill_dialogue_transition() -> void:
+	if _dialogue_transition_tween != null and _dialogue_transition_tween.is_valid():
+		_dialogue_transition_tween.kill()
+	_dialogue_transition_tween = null
 
 
 func _make_overlay(node_name: String, title_text: String, body_text: String) -> PanelContainer:
@@ -731,6 +946,26 @@ func _bar_style(background: Color, border: Color) -> StyleBoxFlat:
 	var style := _panel_style(background, border)
 	style.set_corner_radius_all(2)
 	return style
+
+
+func _ensure_health_heart_count(heart_count: int) -> void:
+	if health_hearts == null:
+		return
+	var safe_count := maxi(0, heart_count)
+	while health_heart_nodes.size() < safe_count:
+		var heart := TextureRect.new()
+		heart.name = "Heart%d" % (health_heart_nodes.size() + 1)
+		heart.texture = load(HEART_TEXTURE_PATH)
+		heart.custom_minimum_size = Vector2(24, 24)
+		heart.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		heart.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		heart.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		health_hearts.add_child(heart)
+		health_heart_nodes.append(heart)
+	while health_heart_nodes.size() > safe_count:
+		var heart: TextureRect = health_heart_nodes.pop_back()
+		health_hearts.remove_child(heart)
+		heart.queue_free()
 
 
 func _update_opening_text(delta: float) -> void:

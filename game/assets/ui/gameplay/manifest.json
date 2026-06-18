@@ -1,0 +1,820 @@
+{
+  "project": "Kenosis - UI HUD cursor icons pack",
+  "license_note": "Original pixel-art assets generated for this chat. Transparent PNGs for game use.",
+  "folders": {
+    "icons": "Icones em 16, 24, 32, 48, 64 e 128 px.",
+    "icons_individuais_64px": "Atalhos prontos para importacao rapida no motor do jogo.",
+    "cursors": "Cursores em 32, 48, 64 e 96 px, com hotspot sugerido no manifest.",
+    "hud_superior_esquerdo": "HUD completo em 1x/2x/4x e elementos separados.",
+    "sprite_sheets": "Sheets para pipeline de importacao/atlas."
+  },
+  "assets": [
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_vida_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_falha_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_energia_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_ressonancia_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_corrupcao_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_memoria_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_aviso_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        16,
+        16
+      ],
+      "path": "icons/16x16/icone_recarga_16x16.png"
+    },
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_vida_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_falha_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_energia_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_ressonancia_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_corrupcao_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_memoria_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_aviso_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        24,
+        24
+      ],
+      "path": "icons/24x24/icone_recarga_24x24.png"
+    },
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_vida_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_falha_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_energia_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_ressonancia_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_corrupcao_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_memoria_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_aviso_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        32,
+        32
+      ],
+      "path": "icons/32x32/icone_recarga_32x32.png"
+    },
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_vida_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_falha_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_energia_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_ressonancia_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_corrupcao_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_memoria_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_aviso_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        48,
+        48
+      ],
+      "path": "icons/48x48/icone_recarga_48x48.png"
+    },
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_vida_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_falha_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_energia_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_ressonancia_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_corrupcao_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_memoria_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_aviso_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        64,
+        64
+      ],
+      "path": "icons/64x64/icone_recarga_64x64.png"
+    },
+    {
+      "type": "icon",
+      "name": "vida",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_vida_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "falha",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_falha_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "energia",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_energia_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "ressonancia",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_ressonancia_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "corrupcao",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_corrupcao_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "memoria",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_memoria_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "aviso",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_aviso_128x128.png"
+    },
+    {
+      "type": "icon",
+      "name": "recarga",
+      "size": [
+        128,
+        128
+      ],
+      "path": "icons/128x128/icone_recarga_128x128.png"
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_resonance_select",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_resonance_select_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gold",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_arrow_gold_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gem",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_arrow_gem_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_shadow_blade",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_shadow_blade_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_corruption_purple",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_corruption_purple_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_disabled_gray",
+      "size": [
+        32,
+        32
+      ],
+      "path": "cursors/32x32/cursor_disabled_gray_32x32.png",
+      "hotspot": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_resonance_select",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_resonance_select_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gold",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_arrow_gold_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gem",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_arrow_gem_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_shadow_blade",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_shadow_blade_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_corruption_purple",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_corruption_purple_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_disabled_gray",
+      "size": [
+        48,
+        48
+      ],
+      "path": "cursors/48x48/cursor_disabled_gray_48x48.png",
+      "hotspot": [
+        8,
+        4
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_resonance_select",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_resonance_select_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gold",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_arrow_gold_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gem",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_arrow_gem_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_shadow_blade",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_shadow_blade_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_corruption_purple",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_corruption_purple_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_disabled_gray",
+      "size": [
+        64,
+        64
+      ],
+      "path": "cursors/64x64/cursor_disabled_gray_64x64.png",
+      "hotspot": [
+        11,
+        5
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_resonance_select",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_resonance_select_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gold",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_arrow_gold_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_arrow_gem",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_arrow_gem_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_shadow_blade",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_shadow_blade_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_corruption_purple",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_corruption_purple_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "cursor",
+      "name": "cursor_disabled_gray",
+      "size": [
+        96,
+        96
+      ],
+      "path": "cursors/96x96/cursor_disabled_gray_96x96.png",
+      "hotspot": [
+        17,
+        8
+      ]
+    },
+    {
+      "type": "hud_full",
+      "name": "hud_superior_esquerdo",
+      "size": [
+        383,
+        105
+      ],
+      "path": "hud_superior_esquerdo/hud_superior_esquerdo_1x_ref_383x105.png"
+    },
+    {
+      "type": "hud_full",
+      "name": "hud_superior_esquerdo",
+      "size": [
+        766,
+        210
+      ],
+      "path": "hud_superior_esquerdo/hud_superior_esquerdo_2x_766x210.png"
+    },
+    {
+      "type": "hud_full",
+      "name": "hud_superior_esquerdo",
+      "size": [
+        1532,
+        420
+      ],
+      "path": "hud_superior_esquerdo/hud_superior_esquerdo_4x_1532x420.png"
+    },
+    {
+      "type": "hud_full",
+      "name": "hud_superior_esquerdo",
+      "size": [
+        1024,
+        281
+      ],
+      "path": "hud_superior_esquerdo/hud_superior_esquerdo_game_1024x281.png"
+    },
+    {
+      "type": "spritesheet",
+      "name": "icons_sheet_32px",
+      "size": [
+        320,
+        40
+      ],
+      "path": "sprite_sheets/icons_sheet_32px.png"
+    },
+    {
+      "type": "spritesheet",
+      "name": "icons_sheet_64px",
+      "size": [
+        640,
+        80
+      ],
+      "path": "sprite_sheets/icons_sheet_64px.png"
+    },
+    {
+      "type": "spritesheet",
+      "name": "cursors_sheet_64px",
+      "size": [
+        480,
+        80
+      ],
+      "path": "sprite_sheets/cursors_sheet_64px.png"
+    }
+  ]
+}

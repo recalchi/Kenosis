@@ -37,6 +37,7 @@ func _test_menu_hub() -> void:
 	var tutorial_close_button := root.find_child("TutorialCloseButton", true, false)
 	var menu_logo := root.find_child("MenuLogo", true, false)
 	var test_field_note := root.find_child("TestFieldNote", true, false)
+	var cursor_manager := root.get_node_or_null("CursorManager")
 
 	if play_button == null:
 		_fail("MainPlayButton not found")
@@ -80,6 +81,55 @@ func _test_menu_hub() -> void:
 	if test_field_note == null:
 		_fail("TestFieldNote not found")
 		return
+
+	if cursor_manager == null:
+		_fail("CursorManager autoload not found")
+		return
+
+	if not bool(cursor_manager.call("has_gameplay_cursor", "default")):
+		_fail("default gameplay cursor was not loaded")
+		return
+
+	if not bool(cursor_manager.call("has_gameplay_cursor", "interact")):
+		_fail("interaction gameplay cursor was not loaded")
+		return
+
+	if not bool(cursor_manager.call("has_gameplay_cursor", "disabled")):
+		_fail("disabled gameplay cursor was not loaded")
+		return
+
+	if cursor_manager.call("get_gameplay_cursor_size", "default") != Vector2i(32, 32):
+		_fail("default gameplay cursor should use the compact 32px asset")
+		return
+
+	if not bool(cursor_manager.call("set_gameplay_context", "interact")):
+		_fail("interaction gameplay cursor could not be activated")
+		return
+
+	if bool(cursor_manager.call("set_gameplay_context", "missing")):
+		_fail("unknown gameplay cursor context should be rejected")
+		return
+
+	cursor_manager.call("set_gameplay_context", "default")
+	if String(cursor_manager.call("get_active_context")) != "default":
+		_fail("gameplay cursor did not return to its default context")
+		return
+
+	var cursor_test_button := Button.new()
+	root.add_child(cursor_test_button)
+	await process_frame
+	cursor_test_button.disabled = false
+	cursor_test_button.mouse_entered.emit()
+	if cursor_test_button.mouse_default_cursor_shape != Control.CURSOR_POINTING_HAND:
+		_fail("enabled buttons should use the interaction cursor")
+		return
+	cursor_test_button.disabled = true
+	cursor_test_button.mouse_entered.emit()
+	if cursor_test_button.mouse_default_cursor_shape != Control.CURSOR_FORBIDDEN:
+		_fail("disabled buttons should switch to the disabled cursor")
+		return
+	root.remove_child(cursor_test_button)
+	cursor_test_button.queue_free()
 
 	if tutorial_panel == null:
 		_fail("TutorialPanel not found")
@@ -145,8 +195,9 @@ func _test_room() -> void:
 	var player := root.find_child("Player", true, false)
 	var resonance_system := root.find_child("ResonanceSystem", true, false)
 	var hud := root.find_child("PrototypeHUD", true, false)
-	var health_bar := root.find_child("HealthBar", true, false)
+	var cursor_manager := root.get_node_or_null("CursorManager")
 	var health_label := root.find_child("HealthLabel", true, false)
+	var health_hearts := root.find_child("HealthHearts", true, false)
 	var stealth_label := root.find_child("StealthLabel", true, false)
 	var receiver := root.find_child("ResonanceReceiver", true, false)
 	var gate := root.find_child("ResonanceGate", true, false)
@@ -192,9 +243,27 @@ func _test_room() -> void:
 		_fail("PrototypeHUD not found")
 		return
 
-	if health_bar == null or health_label == null or stealth_label == null:
+	if health_hearts == null or health_label == null or stealth_label == null:
 		_fail("health or stealth HUD not found")
 		return
+
+	if health_hearts.get_child_count() != 3:
+		_fail("health HUD should display exactly three hearts")
+		return
+
+	hud.call("set_prompt", "E: Interagir")
+	if String(cursor_manager.call("get_active_context")) != "default":
+		_fail("keyboard interaction prompts should not override the mouse cursor")
+		return
+	hud.call("set_prompt", "")
+
+	for heart in health_hearts.get_children():
+		if not heart is TextureRect or heart.texture == null:
+			_fail("health HUD heart texture was not loaded")
+			return
+		if heart.modulate.a < 0.95:
+			_fail("full health should render every heart as active")
+			return
 
 	if status_frame == null or status_frame.get("texture") == null:
 		_fail("detailed status HUD frame not found")
@@ -237,6 +306,9 @@ func _test_room() -> void:
 	player.call("take_damage", 1, Vector2(player.global_position.x + 20.0, player.global_position.y))
 	if int(player.get("health")) != 2:
 		_fail("enemy damage should remove one integrity point")
+		return
+	if health_hearts.get_child(2).modulate.a > 0.45:
+		_fail("lost health should dim the corresponding heart")
 		return
 	if root.find_child("DeathOverlay", true, false).visible:
 		_fail("single damage hit should not cause immediate failure")
@@ -344,9 +416,17 @@ func _test_room() -> void:
 	if not dialogue_overlay.visible or not paused:
 		_fail("dialogue did not pause the room")
 		return
+	hud.call("complete_dialogue_line")
 	hud.call("advance_dialogue")
+	for _frame in range(20):
+		await process_frame
 	if dialogue_overlay.visible or paused:
-		_fail("dialogue did not close and resume the room")
+		_fail("dialogue did not close and resume the room after its exit transition: visible=%s paused=%s closing=%s index=%s" % [
+			str(dialogue_overlay.visible),
+			str(paused),
+			str(hud.get("_dialogue_closing")),
+			str(hud.get("_dialogue_index")),
+		])
 		return
 
 	if not enemy.has_method("set_player_hidden") or not enemy.has_method("receive_back_resonance"):

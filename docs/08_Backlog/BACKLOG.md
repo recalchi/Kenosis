@@ -18,6 +18,18 @@
 - [x] Criar oito prefabs de marcadores de level design.
 - [x] Aplicar fonte e tema canonicos ao menu, HUD e mapa.
 - [x] Criar teste automatizado da expansao.
+- [x] Transformar o atlas central em mapa interativo com hotspots invisiveis.
+- [x] Mapear os 16 pontos nos simbolos e rotulos nativos sem sobreposicao visual.
+- [x] Mesclar missao, localizacao, distancia e memorias em um unico painel.
+- [x] Projetar a posicao atual com marcador cartografico dourado.
+- [x] Dessaturar os simbolos nativos das fases ainda nao liberadas.
+- [x] Exibir nome e status da fase ao selecionar um ponto do atlas.
+- [x] Adicionar zoom, pan e centralizacao.
+- [x] Adicionar abertura animada do mapa com oito frames do pergaminho.
+- [x] Adicionar viagem para fases narrativas ja visitadas.
+- [x] Impedir viagem para a fase atual ou para destinos ainda bloqueados.
+- [x] Criar Lente Cartografica persistente na sala de mapa e em Awakening.
+- [x] Bloquear o mapa ate a coleta da Lente Cartografica.
 - [ ] Executar rodada de playtest manual de ritmo, colisao e legibilidade.
 - [ ] Ajustar balanceamento apos cinco sessoes de teste.
 
@@ -37,7 +49,7 @@
 - [x] Adicionar feedback visual ativo na cobertura furtiva.
 - [x] Adicionar pulso de materializacao da ponte de Ressonancia.
 - [x] Criar captura visual nao-headless opcional para comparacao de screenshots.
-- [ ] Melhorar nomes longos truncados nos botoes laterais do mapa.
+- [x] Melhorar nomes longos truncados nos botoes laterais do mapa.
 - [ ] Expandir Story Auto QA para as 16 salas narrativas.
 
 ## Prioridade P0 - Jornada Narrativa dos 16 Locais

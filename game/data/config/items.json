@@ -20,6 +20,13 @@
       "category": "upgrade",
       "effect": "reveals_hidden_paths",
       "icon": "res://assets/ui/reference/resonance_orb_full.png"
+    },
+    {
+      "id": "cartographer_lens",
+      "name": "Lente Cartografica",
+      "category": "key_item",
+      "effect": "unlocks_world_map",
+      "icon": "res://assets/ui/reference/map_checkpoint_marker.png"
     }
   ]
 }

@@ -6,7 +6,66 @@ signal player_caught
 signal purified
 signal alert_started
 
-enum State { SPAWNING, PATROL, ALERT, CHASE, STUNNED, DEFEATED }
+enum State { SPAWNING, PATROL, ALERT, CHASE, ATTACK, STUNNED, DEFEATED }
+
+const ANIMATION_LIBRARY := {
+	"idle": {"frames": 4, "speed": 5.0, "loop": true},
+	"walk": {"frames": 4, "speed": 7.0, "loop": true},
+	"walk_furtivo": {"frames": 4, "speed": 7.0, "loop": true},
+	"alert": {"frames": 3, "speed": 5.0, "loop": true},
+	"stop_idle_alerta": {"frames": 3, "speed": 5.0, "loop": true},
+	"crouch": {"frames": 3, "speed": 5.0, "loop": true},
+	"crouch_stealth": {"frames": 3, "speed": 5.0, "loop": true},
+	"crouch_walk": {"frames": 3, "speed": 6.0, "loop": true},
+	"attack": {"frames": 4, "speed": 8.0, "loop": false},
+	"attack_golpe_rapido": {"frames": 4, "speed": 8.0, "loop": false},
+	"attack_ataque_critico": {"frames": 4, "speed": 8.0, "loop": false},
+	"backstab": {"frames": 3, "speed": 8.0, "loop": false},
+	"damage": {"frames": 3, "speed": 6.0, "loop": false},
+	"take_damage": {"frames": 3, "speed": 6.0, "loop": false},
+	"turn": {"frames": 5, "speed": 10.0, "loop": false},
+	"death": {"frames": 5, "speed": 5.0, "loop": false},
+	"respawn": {"frames": 3, "speed": 5.0, "loop": false},
+	"respawn_reformacao": {"frames": 3, "speed": 5.0, "loop": false},
+}
+
+const BEHAVIOR_TREE := {
+	"root": "guard_test_field_memory_gate",
+	"states": [
+		"spawning",
+		"patrol",
+		"alert",
+		"chase",
+		"attack",
+		"stunned",
+		"defeated",
+	],
+	"transitions": [
+		{"from": "spawning", "to": "patrol", "when": "respawn_reformacao_finished"},
+		{"from": "patrol", "to": "alert", "when": "player_signature_hidden_after_chase"},
+		{"from": "patrol", "to": "chase", "when": "player_visible_inside_vision"},
+		{"from": "alert", "to": "chase", "when": "player_visible_inside_vision"},
+		{"from": "chase", "to": "alert", "when": "player_signature_hidden"},
+		{"from": "patrol|alert|chase", "to": "attack", "when": "player_enters_contact_area"},
+		{"from": "patrol|alert|chase", "to": "stunned", "when": "rear_resonance_or_hidden_resonance"},
+		{"from": "stunned", "to": "spawning", "when": "stun_timer_finished"},
+	],
+	"animation_map": {
+		"spawning": "respawn_reformacao",
+		"patrol": "walk_furtivo",
+		"alert": "stop_idle_alerta",
+		"chase": "walk_furtivo",
+		"attack": "attack_golpe_rapido",
+		"stunned": "backstab > take_damage > death",
+		"defeated": "death",
+	},
+	"pending_animation_hooks": {
+		"crouch_stealth": "reserved_for_low_profile_patrol_or_stealth_cover_variant",
+		"crouch_walk": "reserved_for_low_profile_chase_variant",
+		"attack_ataque_critico": "reserved_for_elite_or_low_health_attack_variant",
+		"turn": "used_as_patrol_boundary_turn_visual",
+	},
+}
 
 @export var patrol_left := -130.0
 @export var patrol_right := 130.0
@@ -15,6 +74,8 @@ enum State { SPAWNING, PATROL, ALERT, CHASE, STUNNED, DEFEATED }
 @export var gravity := 980.0
 @export var stun_seconds := 4.0
 @export var contact_damage := 1
+@export var attack_standoff_distance := 54.0
+@export var separation_recovery_speed := 220.0
 
 var state := State.PATROL
 var direction := -1.0
@@ -25,6 +86,7 @@ var _origin_x := 0.0
 var _stun_remaining := 0.0
 var _spawn_remaining := 0.0
 var _attack_cooldown := 0.0
+var _turn_visual_remaining := 0.0
 
 @onready var animator: AnimatedSprite2D = $EnemyAnimator
 @onready var vision_area: Area2D = $VisionArea
@@ -53,7 +115,7 @@ func _physics_process(delta: float) -> void:
 			vision_area.monitoring = true
 			contact_area.monitoring = true
 			_set_state(State.PATROL)
-			animator.play("walk")
+			_play_animation("walk_furtivo")
 		move_and_slide()
 		return
 
@@ -71,28 +133,46 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
+	if state == State.ATTACK:
+		velocity.x = 0.0
+		_recover_player_separation(delta)
+		move_and_slide()
+		return
+
 	if player != null:
 		player_hidden = bool(player.get("signature_hidden"))
 		if not player_hidden and state == State.ALERT and vision_area.overlaps_body(player):
 			_set_state(State.CHASE)
 
 	if state == State.CHASE and player != null and not player_hidden:
-		direction = signf(player.global_position.x - global_position.x)
-		velocity.x = direction * chase_speed
-		animator.play("walk")
+		direction = _direction_to_player()
+		var horizontal_distance := absf(player.global_position.x - global_position.x)
+		if horizontal_distance <= attack_standoff_distance:
+			velocity.x = 0.0
+			_try_attack_player(player)
+			_recover_player_separation(delta)
+			_play_animation("stop_idle_alerta")
+		else:
+			velocity.x = direction * chase_speed
+			_play_animation("walk_furtivo")
 	elif state == State.ALERT:
 		velocity.x = 0.0
-		animator.play("alert")
+		_play_animation("stop_idle_alerta")
 	else:
-		velocity.x = direction * patrol_speed
-		animator.play("walk")
-		if global_position.x <= _origin_x + patrol_left:
-			direction = 1.0
-		elif global_position.x >= _origin_x + patrol_right:
-			direction = -1.0
+		if _turn_visual_remaining > 0.0:
+			_turn_visual_remaining -= delta
+			velocity.x = 0.0
+			_play_animation("turn")
+		else:
+			velocity.x = direction * patrol_speed
+			_play_animation("walk_furtivo")
+			if global_position.x <= _origin_x + patrol_left:
+				_face_direction(1.0)
+			elif global_position.x >= _origin_x + patrol_right:
+				_face_direction(-1.0)
 
-	animator.flip_h = direction > 0.0
-	animator.speed_scale = clampf(absf(velocity.x) / patrol_speed, 0.8, 1.75) if animator.animation == "walk" else 1.0
+	animator.flip_h = direction < 0.0
+	animator.speed_scale = clampf(absf(velocity.x) / patrol_speed, 0.8, 1.75) if animator.animation in ["walk", "walk_furtivo"] else 1.0
 	_update_vision_direction()
 	move_and_slide()
 
@@ -101,12 +181,14 @@ func set_player_hidden(hidden: bool) -> void:
 	player_hidden = hidden
 	if hidden and state == State.CHASE:
 		_set_state(State.ALERT)
+		_play_animation("stop_idle_alerta")
 
 
 func force_alert(target: PlayerController) -> void:
 	player = target
 	player_hidden = bool(target.get("signature_hidden"))
-	if not player_hidden and state != State.STUNNED:
+	if not player_hidden and state not in [State.ATTACK, State.STUNNED, State.DEFEATED]:
+		direction = _direction_to_player()
 		_set_state(State.CHASE)
 		alert_started.emit()
 
@@ -116,7 +198,7 @@ func receive_resonance(actor: Node) -> bool:
 
 
 func receive_back_resonance(actor: Node) -> bool:
-	if state == State.STUNNED or state == State.DEFEATED or not actor is PlayerController:
+	if state in [State.ATTACK, State.STUNNED, State.DEFEATED] or not actor is PlayerController:
 		return false
 
 	var actor_is_behind: bool = (actor.global_position.x < global_position.x and direction > 0.0) or (actor.global_position.x > global_position.x and direction < 0.0)
@@ -126,8 +208,8 @@ func receive_back_resonance(actor: Node) -> bool:
 	is_stunned = true
 	_stun_remaining = stun_seconds
 	velocity = Vector2.ZERO
-	animator.play("damage")
 	_set_state(State.STUNNED)
+	_play_animation("backstab")
 	purified.emit()
 	return true
 
@@ -145,11 +227,8 @@ func _on_vision_entered(body: Node) -> void:
 
 
 func _on_contact_entered(body: Node) -> void:
-	if body is PlayerController and state in [State.PATROL, State.ALERT, State.CHASE] and _attack_cooldown <= 0.0:
-		_attack_cooldown = 1.0
-		animator.play("attack")
-		if body.take_damage(contact_damage, global_position):
-			player_caught.emit()
+	if body is PlayerController:
+		_try_attack_player(body)
 
 
 func _set_state(next_state: State) -> void:
@@ -165,12 +244,19 @@ func _begin_reformation() -> void:
 	velocity = Vector2.ZERO
 	vision_area.set_deferred("monitoring", false)
 	contact_area.set_deferred("monitoring", false)
-	animator.play("respawn")
+	_play_animation("respawn_reformacao")
 
 
 func _on_animation_finished() -> void:
-	if state == State.STUNNED and animator.animation == "damage":
-		animator.play("death")
+	if state == State.ATTACK and animator.animation in ["attack", "attack_golpe_rapido", "attack_ataque_critico"]:
+		if player != null and is_instance_valid(player) and not player_hidden:
+			_set_state(State.CHASE)
+		else:
+			_set_state(State.ALERT)
+	elif state == State.STUNNED and animator.animation == "backstab":
+		_play_animation("take_damage")
+	elif state == State.STUNNED and animator.animation in ["damage", "take_damage"]:
+		_play_animation("death")
 
 
 func _update_vision_direction() -> void:
@@ -178,26 +264,68 @@ func _update_vision_direction() -> void:
 	collision.position.x = 105.0 * direction
 
 
+func _direction_to_player() -> float:
+	if player == null or not is_instance_valid(player):
+		return -1.0 if direction < 0.0 else 1.0
+	var delta_x := player.global_position.x - global_position.x
+	if absf(delta_x) <= 0.5:
+		return -1.0 if direction < 0.0 else 1.0
+	return signf(delta_x)
+
+
+func _recover_player_separation(delta: float) -> void:
+	if player == null or not is_instance_valid(player):
+		return
+	var desired_x := player.global_position.x - direction * attack_standoff_distance
+	global_position.x = move_toward(global_position.x, desired_x, separation_recovery_speed * delta)
+
+
+func _try_attack_player(target: PlayerController) -> void:
+	if state not in [State.PATROL, State.ALERT, State.CHASE] or _attack_cooldown > 0.0:
+		return
+	player = target
+	player_hidden = bool(target.get("signature_hidden"))
+	if player_hidden:
+		_set_state(State.ALERT)
+		return
+	direction = _direction_to_player()
+	_attack_cooldown = 1.0
+	_set_state(State.ATTACK)
+	velocity.x = 0.0
+	_play_animation("attack_golpe_rapido")
+	if target.take_damage(contact_damage, global_position):
+		player_caught.emit()
+
+
+func _face_direction(next_direction: float) -> void:
+	if next_direction == 0.0 or is_equal_approx(direction, next_direction):
+		return
+	direction = next_direction
+	_turn_visual_remaining = 0.32
+
+
+func _play_animation(animation_name: String) -> void:
+	if animator.sprite_frames == null or not animator.sprite_frames.has_animation(animation_name):
+		return
+	if animator.animation != animation_name or not animator.is_playing():
+		animator.play(animation_name)
+
+
+func get_behavior_tree() -> Dictionary:
+	return BEHAVIOR_TREE.duplicate(true)
+
+
 func _build_frames() -> SpriteFrames:
 	var frames := SpriteFrames.new()
-	var animation_frames := {
-		"idle": 4,
-		"walk": 4,
-		"alert": 3,
-		"crouch": 3,
-		"attack": 4,
-		"damage": 3,
-		"death": 4,
-		"respawn": 3,
-	}
-	for animation_name in animation_frames:
+	for animation_name in ANIMATION_LIBRARY:
 		if not frames.has_animation(animation_name):
 			frames.add_animation(animation_name)
-		for frame_index in range(int(animation_frames[animation_name])):
+		var animation_config: Dictionary = ANIMATION_LIBRARY[animation_name]
+		for frame_index in range(int(animation_config.get("frames", 0))):
 			var path := "res://assets/sprites/enemies/corrupted_patroller/%s_%d.png" % [animation_name, frame_index]
 			var texture: Texture2D = load(path)
 			if texture != null:
 				frames.add_frame(animation_name, texture)
-		frames.set_animation_speed(animation_name, 6.0 if animation_name == "walk" else (8.0 if animation_name == "attack" else 4.0))
-		frames.set_animation_loop(animation_name, animation_name in ["idle", "walk", "alert", "crouch"])
+		frames.set_animation_speed(animation_name, float(animation_config.get("speed", 5.0)))
+		frames.set_animation_loop(animation_name, bool(animation_config.get("loop", false)))
 	return frames
