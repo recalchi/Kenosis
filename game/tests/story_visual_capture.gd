@@ -5,6 +5,10 @@ const OUTPUT_DIR := "res://tests/artifacts"
 
 
 func _init() -> void:
+	call_deferred("_run")
+
+
+func _run() -> void:
 	root.size = Vector2i(1280, 720)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUTPUT_DIR))
 	await process_frame
@@ -35,7 +39,6 @@ func _init() -> void:
 
 
 func _capture(path: String) -> void:
-	await RenderingServer.frame_post_draw
 	var image := root.get_texture().get_image()
-	image.save_png(path)
+	image.save_png(ProjectSettings.globalize_path(path))
 	print("CAPTURED %s" % path)
